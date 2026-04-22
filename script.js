@@ -2,6 +2,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const topbarLinks = document.querySelectorAll('.topbar__nav a');
   const sections = document.querySelectorAll('section[id]');
 
+  const placeholderImage = (label) => {
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+        <rect width="800" height="600" fill="#eef3ff" />
+        <rect x="40" y="40" width="720" height="520" rx="24" fill="#ffffff" stroke="#dbe5ff" stroke-width="4" />
+        <text x="400" y="275" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" fill="#1f45b6">Demo belum memakai gambar asli</text>
+        <text x="400" y="320" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" fill="#60708f">${label}</text>
+      </svg>
+    `;
+    return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+  };
+
   const setActiveNav = () => {
     let currentId = '';
 
@@ -48,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       image.src = selected.src;
       image.alt = selected.alt;
       caption.textContent = selected.caption;
+      image.dataset.fallbackLabel = selected.fallbackLabel || 'Siapkan gambar demo di folder assets/images';
     };
 
     buttons.forEach((button) => {
@@ -63,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     image.addEventListener('error', () => {
-      image.src = 'https://placehold.co/800x600/eef3ff/1f45b6?text=Gambar+demo+belum+disiapkan';
+      image.src = placeholderImage(image.dataset.fallbackLabel || 'Siapkan gambar demo di folder assets/images');
       caption.textContent = 'Gambar demo belum tersedia. Nanti tinggal ganti file gambar di folder assets/images sesuai nama yang dipakai.';
     });
   };
@@ -77,17 +90,20 @@ document.addEventListener('DOMContentLoaded', () => {
       rgb: {
         src: 'assets/images/pcd-sample-rgb.jpg',
         alt: 'Contoh citra dalam mode RGB',
-        caption: 'Mode RGB menampilkan gambar dengan warna yang paling dekat dengan foto aslinya.',
+        caption: 'Mode RGB menampilkan warna gambar seperti yang biasa terlihat pada foto aslinya.',
+        fallbackLabel: 'pcd-sample-rgb.jpg',
       },
       gray: {
         src: 'assets/images/pcd-sample-gray.jpg',
         alt: 'Contoh citra dalam mode grayscale',
-        caption: 'Mode grayscale menghilangkan informasi warna dan hanya menyisakan tingkat terang dan gelap.',
+        caption: 'Mode grayscale menghilangkan informasi warna dan hanya menyisakan terang serta gelap.',
+        fallbackLabel: 'pcd-sample-gray.jpg',
       },
       hsv: {
         src: 'assets/images/pcd-sample-hsv.jpg',
         alt: 'Contoh citra dalam mode HSV',
-        caption: 'Mode HSV membantu melihat warna dari sisi hue, saturation, dan value, jadi tampilannya bisa terasa berbeda dari RGB.',
+        caption: 'Mode HSV membantu melihat warna dari sisi hue, saturation, dan value, jadi tampilannya terasa berbeda dari RGB.',
+        fallbackLabel: 'pcd-sample-hsv.jpg',
       },
     },
   });
@@ -102,26 +118,31 @@ document.addEventListener('DOMContentLoaded', () => {
         src: 'assets/images/transform-original.jpg',
         alt: 'Citra asli untuk demo transformasi',
         caption: 'Ini adalah gambar awal sebelum diubah ukuran, diputar, dibalik, atau digeser.',
+        fallbackLabel: 'transform-original.jpg',
       },
       resize: {
         src: 'assets/images/transform-resize.jpg',
         alt: 'Hasil resize pada citra',
         caption: 'Resize mengubah ukuran gambar. Isi gambarnya tetap sama, tetapi tampilannya menjadi lebih kecil atau lebih besar.',
+        fallbackLabel: 'transform-resize.jpg',
       },
       rotate: {
         src: 'assets/images/transform-rotate.jpg',
         alt: 'Hasil rotasi pada citra',
         caption: 'Rotate memutar gambar. Pada contoh praktikum, gambar diputar 90 derajat sehingga orientasinya berubah jelas.',
+        fallbackLabel: 'transform-rotate.jpg',
       },
       flip: {
         src: 'assets/images/transform-flip.jpg',
         alt: 'Hasil flip pada citra',
         caption: 'Flip membalik gambar. Kalau horizontal, sisi kiri dan kanan seakan bertukar tempat.',
+        fallbackLabel: 'transform-flip.jpg',
       },
       translate: {
         src: 'assets/images/transform-translate.jpg',
         alt: 'Hasil translasi pada citra',
         caption: 'Translate menggeser posisi gambar ke arah tertentu tanpa mengubah bentuk objek utamanya.',
+        fallbackLabel: 'transform-translate.jpg',
       },
     },
   });
@@ -136,21 +157,25 @@ document.addEventListener('DOMContentLoaded', () => {
         src: 'assets/images/enhance-original.jpg',
         alt: 'Citra asli sebelum peningkatan domain spasial',
         caption: 'Ini adalah tampilan awal gambar sebelum proses peningkatan dilakukan.',
+        fallbackLabel: 'enhance-original.jpg',
       },
       equalized: {
         src: 'assets/images/enhance-equalized.jpg',
         alt: 'Hasil histogram equalization pada citra',
         caption: 'Histogram equalization membantu membuat persebaran intensitas lebih merata, sehingga bagian gambar bisa terlihat lebih jelas.',
+        fallbackLabel: 'enhance-equalized.jpg',
       },
       blur: {
         src: 'assets/images/enhance-blur.jpg',
         alt: 'Hasil Gaussian blur pada citra',
         caption: 'Gaussian blur membuat gambar terasa lebih halus karena detail-detail kecil dan gangguan tertentu ikut dilembutkan.',
+        fallbackLabel: 'enhance-blur.jpg',
       },
       sharpen: {
         src: 'assets/images/enhance-sharpen.jpg',
         alt: 'Hasil sharpening pada citra',
         caption: 'Sharpening menonjolkan tepi dan detail supaya gambar terlihat lebih tegas.',
+        fallbackLabel: 'enhance-sharpen.jpg',
       },
     },
   });
@@ -164,17 +189,20 @@ document.addEventListener('DOMContentLoaded', () => {
       original: {
         src: 'assets/images/restoration-original.jpg',
         alt: 'Citra asli sebelum restorasi',
-        caption: 'Gambar asli dipakai sebagai patokan utama untuk melihat seberapa jauh hasil restorasi mendekati kondisi awal.',
+        caption: 'Gambar asli dipakai sebagai patokan utama untuk melihat seberapa dekat hasil restorasi dengan kondisi awal.',
+        fallbackLabel: 'restoration-original.jpg',
       },
       noisy: {
         src: 'assets/images/restoration-noisy.jpg',
         alt: 'Citra setelah ditambahkan salt and pepper noise',
         caption: 'Salt-and-pepper noise terlihat seperti bintik-bintik hitam dan putih yang mengganggu tampilan gambar.',
+        fallbackLabel: 'restoration-noisy.jpg',
       },
       restored: {
         src: 'assets/images/restoration-restored.jpg',
         alt: 'Citra setelah diproses median filter',
         caption: 'Setelah median filter diterapkan, gangguan noise berkurang dan bentuk utama gambar bisa terlihat lebih bersih.',
+        fallbackLabel: 'restoration-restored.jpg',
       },
     },
   });

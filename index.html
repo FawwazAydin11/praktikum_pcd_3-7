@@ -12,11 +12,11 @@
       <a href="#beranda" class="brand">Praktikum Pengolahan Citra Digital</a>
       <nav class="topbar__nav">
         <a href="#beranda">Beranda</a>
-        <a href="#materi-3">Format Citra</a>
+        <a href="#materi-3">Format</a>
         <a href="#materi-4">Transformasi</a>
         <a href="#materi-5">Peningkatan</a>
-        <a href="#materi-6">Restorasi Statistik</a>
-        <a href="#materi-7">Restorasi CNN</a>
+        <a href="#materi-6">Restorasi</a>
+        <a href="#materi-7">CNN</a>
         <a href="#referensi">Referensi</a>
       </nav>
     </div>
@@ -25,55 +25,50 @@
   <main class="main-content main-content--full">
     <section id="beranda" class="hero hero--simple section-block">
       <div class="hero__text hero__text--wide">
-        <h1>Belajar Pengolahan Citra Digital dengan cara yang pelan, runtut, dan gampang diikuti</h1>
+        <h1>Belajar pengolahan citra digital dengan alur yang runtut dan gampang diikuti</h1>
         <p>
-          Halaman ini dibuat supaya isi praktikum terasa lebih enak dipahami. Jadi bukan cuma lihat kode lalu selesai,
-          tapi benar-benar ngerti apa yang sedang dilakukan ke gambar, kenapa hasilnya bisa berubah, dan kapan teknik itu dipakai.
-          Bahasanya sengaja dibuat ringan supaya pas dipakai jelasin ke mahasiswa tidak terasa kaku.
+          Web ini dibuat supaya materi praktikum lebih enak dipahami. Jadi pas masuk ke kode, mahasiswa tidak merasa tiba-tiba melihat hal yang asing.
+          Alurnya dimulai dari yang paling dasar dulu, lalu pelan-pelan naik ke bagian yang lebih kompleks.
         </p>
       </div>
     </section>
 
     <section class="overview section-block">
       <div class="section-heading">
-        <h2>Arah belajarnya ke mana?</h2>
+        <h2>Alur belajarnya</h2>
         <p>
-          Alurnya dibuat dari yang paling dasar dulu. Pertama, pahami dulu gambar itu sebenarnya disimpan seperti apa di komputer.
-          Setelah itu baru masuk ke perubahan bentuk gambar, peningkatan kualitas gambar, lalu ke bagian memperbaiki gambar yang rusak,
-          sampai akhirnya melihat contoh restorasi modern dengan CNN.
+          Urutannya sengaja dibuat sederhana. Pertama, pahami dulu gambar sebagai data. Setelah itu baru lihat bagaimana gambar bisa diubah tampilannya,
+          ditingkatkan kualitasnya, lalu diperbaiki saat terkena gangguan. Terakhir, mahasiswa dikenalkan ke contoh pendekatan modern memakai CNN.
         </p>
       </div>
 
       <div class="overview-grid overview-grid--2">
         <article class="overview-card">
-          <h3>Mulai dari representasi gambar</h3>
+          <h3>Mulai dari dasar</h3>
           <p>
-            Di awal, mahasiswa diajak paham bahwa gambar digital itu bukan benda ajaib, melainkan kumpulan piksel yang punya nilai.
-            Dari sini mereka biasanya lebih gampang masuk ke materi setelahnya.
+            Mahasiswa diajak paham dulu bahwa gambar digital itu tersusun dari piksel, dan tiap piksel menyimpan nilai.
+            Ini pondasi utamanya.
           </p>
         </article>
 
         <article class="overview-card">
-          <h3>Lanjut ke perubahan tampilan gambar</h3>
+          <h3>Lanjut ke perubahan tampilan</h3>
           <p>
-            Setelah tahu bentuk dasarnya, baru masuk ke transformasi seperti resize, rotate, flip, dan translate.
-            Bagian ini enak karena hasilnya langsung kelihatan di mata.
+            Setelah paham bentuk datanya, mahasiswa akan lebih mudah menerima materi resize, rotate, flip, dan translate.
           </p>
         </article>
 
         <article class="overview-card">
-          <h3>Naik ke peningkatan kualitas gambar</h3>
+          <h3>Masuk ke peningkatan kualitas</h3>
           <p>
-            Di sini mahasiswa mulai melihat bahwa gambar bisa dibuat lebih jelas, lebih halus, atau lebih tajam,
-            tergantung teknik yang dipakai.
+            Di sini mahasiswa melihat bahwa gambar bisa dibuat lebih jelas, lebih halus, atau lebih tajam, tergantung proses yang dipakai.
           </p>
         </article>
 
         <article class="overview-card">
-          <h3>Masuk ke restorasi</h3>
+          <h3>Naik ke restorasi</h3>
           <p>
-            Setelah itu barulah dibahas cara memperbaiki gambar yang sudah terganggu noise. Jadi logikanya tetap nyambung,
-            tidak loncat-loncat.
+            Setelah itu baru dibahas bagaimana gambar yang terganggu noise bisa diperbaiki, baik dengan cara klasik maupun dengan CNN.
           </p>
         </article>
       </div>
@@ -83,75 +78,71 @@
       <div class="section-heading">
         <h2>Format Citra dan Model Warna</h2>
         <p>
-          Sebelum membahas yang aneh-aneh, mahasiswa perlu paham dulu satu hal penting: gambar digital itu sebenarnya terdiri dari banyak piksel.
-          Setiap piksel menyimpan nilai tertentu. Nah, nilai inilah yang nanti diolah. Jadi kalau gambar berubah jadi abu-abu, jadi lebih gelap,
-          atau warnanya terlihat berbeda, itu sebenarnya karena nilai pikselnya ikut berubah.
+          Ini bagian paling awal dan paling penting. Kalau bagian ini sudah paham, materi setelahnya biasanya jauh lebih gampang diikuti.
+          Fokusnya sederhana: gambar digital itu sebenarnya apa, lalu kenapa satu gambar yang sama bisa punya tampilan yang berbeda.
         </p>
       </div>
 
       <div class="content-grid">
         <div class="content-main">
           <article class="panel">
-            <h3>Mulai dari dasar</h3>
+            <h3>Gambar digital itu apa?</h3>
             <p>
-              Saat sebuah gambar dibaca oleh program, gambar itu masuk sebagai data. Kalau gambar berwarna, biasanya tiap piksel punya tiga komponen.
-              Sederhananya, satu piksel bisa menyimpan informasi merah, hijau, dan biru. Karena itu gambar berwarna sering ditulis sebagai tiga kanal.
-              Dari sini mahasiswa biasanya mulai sadar bahwa komputer tidak melihat gambar seperti manusia melihat foto, tapi sebagai kumpulan angka.
+              Gampangnya, gambar digital itu kumpulan titik kecil yang disebut piksel. Jumlahnya banyak, dan tiap piksel menyimpan nilai.
+              Karena itu komputer tidak melihat gambar seperti manusia melihat foto. Komputer melihatnya sebagai data.
             </p>
             <p>
-              Selain itu, ukuran gambar juga penting. Misalnya ada gambar berukuran 1200 × 1600 × 3. Artinya tinggi dan lebar gambar masing-masing punya ukuran tertentu,
-              lalu angka 3 menandakan bahwa gambar itu punya tiga kanal warna. Penjelasan seperti ini penting banget karena jadi pondasi untuk semua materi sesudahnya.
+              Misalnya sebuah gambar punya ukuran 1200 × 1600 × 3. Dua angka pertama menunjukkan tinggi dan lebar gambar.
+              Angka terakhir menunjukkan jumlah kanal warna. Jadi dari sini mahasiswa mulai melihat bahwa gambar itu bukan sekadar visual,
+              tapi juga data yang bisa dibaca dan diolah.
             </p>
           </article>
 
           <article class="panel">
-            <h3>Kenapa satu gambar bisa ditampilkan dalam beberapa bentuk?</h3>
+            <h3>Kenapa satu gambar bisa ditampilkan dengan cara yang berbeda?</h3>
             <p>
-              Karena satu gambar yang sama bisa direpresentasikan dengan cara yang berbeda tergantung tujuan kita. Di praktikum ini,
-              yang paling penting adalah membandingkan tiga tampilan: RGB, grayscale, dan HSV.
+              Karena kadang kita ingin melihat warna aslinya, kadang kita hanya butuh tingkat terang-gelapnya, dan kadang kita ingin melihat warna dari cara pandang yang lain.
+              Itulah kenapa di praktikum ini gambar ditampilkan dalam bentuk RGB, grayscale, dan HSV.
             </p>
             <div class="mini-card-grid">
               <div class="mini-card">
                 <h4>RGB</h4>
                 <p>
-                  Ini adalah tampilan warna yang paling dekat dengan yang biasa kita lihat. Gambar ditampilkan berdasarkan campuran merah, hijau, dan biru.
+                  Ini tampilan warna yang paling dekat dengan gambar asli. Warna dibentuk dari campuran merah, hijau, dan biru.
                 </p>
               </div>
               <div class="mini-card">
                 <h4>Grayscale</h4>
                 <p>
-                  Pada tampilan ini, warna dihilangkan dan yang tersisa hanya tingkat terang dan gelap. Biasanya ini dipakai saat fokus kita bukan ke warna,
-                  tapi ke intensitas.
+                  Pada tampilan ini, warna dihilangkan. Yang tersisa hanya terang dan gelap. Ini berguna saat yang ingin dilihat adalah intensitasnya.
                 </p>
               </div>
               <div class="mini-card">
                 <h4>HSV</h4>
                 <p>
-                  Di sini warna dilihat dengan sudut pandang lain, yaitu hue, saturation, dan value. Penjelasan gampangnya, HSV membantu kita melihat warna,
-                  tingkat pekat warna, dan tingkat terang warna secara terpisah.
+                  Model ini memisahkan warna, tingkat kepekatan warna, dan tingkat terang. Jadi warnanya dilihat dari sudut pandang yang berbeda.
                 </p>
               </div>
             </div>
           </article>
 
           <article class="panel">
-            <h3>Alur yang dijalankan pada praktikum</h3>
+            <h3>Apa yang dilakukan pada praktikum?</h3>
             <ol>
-              <li>Gambar dibaca terlebih dahulu oleh program.</li>
-              <li>Ukuran gambar ditampilkan supaya mahasiswa tahu bentuk datanya.</li>
-              <li>Gambar diubah ke RGB agar warnanya tampil dengan benar.</li>
-              <li>Gambar diubah ke grayscale untuk melihat intensitas terang-gelap.</li>
-              <li>Gambar diubah ke HSV untuk melihat representasi warna dari sisi yang berbeda.</li>
-              <li>Ketiga hasil itu dibandingkan agar mahasiswa bisa benar-benar melihat perbedaannya.</li>
+              <li>Gambar dibaca dulu oleh program.</li>
+              <li>Ukuran gambar dilihat supaya tahu bentuk datanya.</li>
+              <li>Gambar diubah ke RGB.</li>
+              <li>Gambar diubah ke grayscale.</li>
+              <li>Gambar diubah ke HSV.</li>
+              <li>Semua hasil dibandingkan supaya perbedaannya benar-benar terlihat.</li>
             </ol>
           </article>
 
           <article class="panel">
-            <h3>Hal penting yang perlu ditekankan saat menjelaskan</h3>
+            <h3>Inti dari materi ini</h3>
             <p>
-              Jangan langsung ngomong terlalu teknis. Lebih enak mulai dari kalimat sederhana seperti: “gambar itu tersusun dari banyak titik kecil yang disebut piksel,
-              dan tiap piksel punya nilai.” Setelah itu baru masuk ke ide bahwa kalau cara menyimpan nilainya diubah, maka tampilan gambarnya juga ikut berubah.
-              Dengan alur seperti ini, mahasiswa biasanya lebih cepat nyambung.
+              Yang paling penting bukan sekadar hafal istilahnya, tapi paham bahwa gambar adalah data.
+              Kalau cara merepresentasikan datanya berubah, tampilan gambarnya juga bisa ikut berubah.
             </p>
           </article>
         </div>
@@ -159,8 +150,8 @@
         <aside class="content-side">
           <article class="demo-card" data-demo="color-mode">
             <div class="demo-card__header">
-              <h3>Area Demo</h3>
-              <p>Coba pindah tampilan gambar untuk melihat bedanya.</p>
+              <h3>Demo Perbandingan Tampilan</h3>
+              <p>Pindah tampilan gambar untuk melihat bedanya secara langsung.</p>
             </div>
 
             <div class="demo-controls">
@@ -174,7 +165,7 @@
             </div>
 
             <div class="demo-caption" id="demo-color-caption">
-              Mode RGB menampilkan warna gambar seperti yang biasa dilihat pada foto asli.
+              Mode RGB menampilkan warna gambar seperti yang biasa terlihat pada foto aslinya.
             </div>
           </article>
         </aside>
@@ -185,72 +176,68 @@
       <div class="section-heading">
         <h2>Transformasi Citra</h2>
         <p>
-          Setelah paham bentuk dasar gambar, langkah berikutnya adalah melihat bagaimana gambar bisa diubah tanpa harus mengganti objek utamanya.
-          Jadi yang berubah di sini bukan isi gambarnya, melainkan ukuran, posisi, atau arah tampilannya.
+          Setelah paham bentuk dasar gambar, sekarang masuk ke tahap berikutnya: bagaimana gambar bisa diubah tampilannya.
+          Yang berubah di sini bukan isi objeknya, tapi ukuran, arah, atau posisinya.
         </p>
       </div>
 
       <div class="content-grid">
         <div class="content-main">
           <article class="panel">
-            <h3>Kenapa materi ini penting?</h3>
+            <h3>Apa maksud transformasi citra?</h3>
             <p>
-              Karena dalam pengolahan citra, kita sering banget butuh menyesuaikan gambar. Kadang gambar terlalu besar, jadi perlu di-resize.
-              Kadang orientasinya tidak sesuai, jadi perlu diputar. Kadang posisi objek perlu digeser. Jadi materi ini sebenarnya sangat dekat dengan kebutuhan nyata.
+              Transformasi citra adalah proses mengubah tampilan gambar tanpa mengganti objek utamanya.
+              Jadi objek di dalam gambar tetap sama, tapi tampilannya bisa dibuat lebih kecil, diputar, dibalik, atau digeser.
             </p>
           </article>
 
           <article class="panel">
-            <h3>Empat transformasi yang dibahas</h3>
+            <h3>Empat transformasi yang dipakai di praktikum</h3>
             <div class="mini-card-grid">
               <div class="mini-card">
                 <h4>Resize</h4>
                 <p>
-                  Digunakan saat ukuran gambar ingin diubah. Intinya, gambar dibuat lebih kecil atau lebih besar dari ukuran awal.
+                  Mengubah ukuran gambar. Gambar bisa dibuat lebih kecil atau lebih besar dari ukuran awal.
                 </p>
               </div>
               <div class="mini-card">
                 <h4>Rotate</h4>
                 <p>
-                  Digunakan saat gambar perlu diputar. Pada praktikum, contoh yang dipakai adalah rotasi 90 derajat.
+                  Memutar gambar. Pada praktikum, contoh yang dipakai adalah rotasi 90 derajat.
                 </p>
               </div>
               <div class="mini-card">
                 <h4>Flip</h4>
                 <p>
-                  Digunakan untuk membalik gambar. Kalau horizontal, sisi kiri dan kanan akan tertukar.
+                  Membalik gambar. Kalau horizontal, sisi kiri dan kanan seperti ditukar.
                 </p>
               </div>
               <div class="mini-card">
                 <h4>Translate</h4>
                 <p>
-                  Digunakan untuk menggeser gambar ke arah tertentu. Objeknya tetap sama, hanya posisinya yang berpindah.
+                  Menggeser posisi gambar ke arah tertentu tanpa mengubah bentuk objeknya.
                 </p>
               </div>
             </div>
           </article>
 
           <article class="panel">
-            <h3>Alur penjelasan yang enak dipakai</h3>
-            <p>
-              Mulailah dari gambar asli dulu. Setelah itu tunjukkan satu per satu hasil resize, rotate, flip, dan translate. Jangan langsung semua sekaligus,
-              karena mahasiswa sering bingung kalau perubahan ditampilkan terlalu banyak dalam satu waktu. Lebih enak kalau setiap perubahan disertai satu kalimat simpel,
-              misalnya “resize itu mengubah ukuran”, “rotate itu memutar gambar”, dan seterusnya.
-            </p>
+            <h3>Apa yang dilakukan pada praktikum?</h3>
             <ol>
-              <li>Tampilkan gambar asli sebagai acuan.</li>
-              <li>Perlihatkan hasil resize agar mahasiswa sadar perubahannya ada di ukuran.</li>
-              <li>Tunjukkan rotate agar mereka melihat orientasi gambar berubah.</li>
-              <li>Tunjukkan flip agar terlihat bahwa gambar dibalik.</li>
-              <li>Tunjukkan translate agar terlihat bahwa posisi gambar bergeser.</li>
+              <li>Mulai dari gambar asli sebagai acuan.</li>
+              <li>Ubah ukuran gambar dengan resize.</li>
+              <li>Putar gambar dengan rotate.</li>
+              <li>Balik gambar dengan flip.</li>
+              <li>Geser gambar dengan translate.</li>
+              <li>Bandingkan hasilnya.</li>
             </ol>
           </article>
 
           <article class="panel">
-            <h3>Inti yang harus ditangkap mahasiswa</h3>
+            <h3>Inti dari materi ini</h3>
             <p>
-              Transformasi citra itu pada dasarnya adalah cara untuk mengatur tampilan gambar. Jadi mahasiswa tidak perlu takut dulu dengan istilahnya.
-              Selama mereka paham apa yang berubah pada hasil akhirnya, mereka sudah berada di jalur yang benar.
+              Mahasiswa perlu paham bahwa gambar itu fleksibel. Tampilannya bisa diatur sesuai kebutuhan.
+              Jadi kalau nanti ada gambar yang ukurannya terlalu besar, arahnya salah, atau posisinya perlu disesuaikan, mereka sudah punya bekal dasarnya.
             </p>
           </article>
         </div>
@@ -258,8 +245,8 @@
         <aside class="content-side">
           <article class="demo-card" data-demo="transform">
             <div class="demo-card__header">
-              <h3>Area Demo</h3>
-              <p>Pilih jenis transformasi untuk melihat perubahan hasil.</p>
+              <h3>Demo Transformasi</h3>
+              <p>Pilih satu hasil untuk melihat perubahan yang terjadi.</p>
             </div>
 
             <div class="demo-controls demo-controls--wrap">
@@ -275,7 +262,7 @@
             </div>
 
             <div class="demo-caption" id="demo-transform-caption">
-              Gambar asli dipakai sebagai pembanding sebelum transformasi dilakukan.
+              Gambar awal dipakai sebagai pembanding sebelum transformasi dilakukan.
             </div>
           </article>
         </aside>
@@ -286,9 +273,8 @@
       <div class="section-heading">
         <h2>Peningkatan Citra dalam Domain Spasial dan Frekuensi</h2>
         <p>
-          Di tahap ini, mahasiswa mulai melihat bahwa gambar bisa dibuat lebih nyaman dilihat atau lebih jelas informasinya.
-          Ada dua jalur yang dikenalkan: domain spasial dan domain frekuensi. Bahasanya jangan terlalu berat dulu,
-          yang penting mahasiswa paham apa bedanya dan apa efeknya pada hasil gambar.
+          Di tahap ini, mahasiswa mulai masuk ke pertanyaan yang lebih menarik: kalau gambar terlihat kurang jelas,
+          apa yang bisa dilakukan supaya tampilannya jadi lebih baik?
         </p>
       </div>
 
@@ -297,27 +283,26 @@
           <article class="panel">
             <h3>Bagian pertama: domain spasial</h3>
             <p>
-              Domain spasial itu gampangnya adalah pengolahan yang langsung menyentuh piksel gambar. Jadi kita bekerja langsung pada nilai-nilai pikselnya.
-              Karena itu hasilnya biasanya lebih mudah dipahami secara visual. Di praktikum ini, contoh yang dipakai adalah histogram equalization,
-              Gaussian blur, dan sharpening.
+              Domain spasial itu gampangnya adalah pengolahan yang bekerja langsung pada nilai piksel.
+              Karena langsung menyentuh piksel, efeknya juga lebih mudah dipahami secara visual.
             </p>
             <div class="mini-card-grid">
               <div class="mini-card">
                 <h4>Histogram Equalization</h4>
                 <p>
-                  Teknik ini membantu memperbaiki persebaran intensitas pada gambar, sehingga kontrasnya bisa terasa lebih jelas.
+                  Digunakan untuk memperbaiki persebaran intensitas sehingga kontras gambar bisa terasa lebih jelas.
                 </p>
               </div>
               <div class="mini-card">
                 <h4>Gaussian Blur</h4>
                 <p>
-                  Teknik ini menghaluskan gambar. Detail halus akan sedikit berkurang, tapi efeknya gambar jadi lebih lembut.
+                  Digunakan untuk membuat gambar lebih halus. Detail kecil akan berkurang, tapi hasilnya terasa lebih lembut.
                 </p>
               </div>
               <div class="mini-card">
                 <h4>Sharpening</h4>
                 <p>
-                  Kebalikannya blur. Teknik ini dipakai saat bagian tepi atau detail gambar ingin dibuat lebih menonjol.
+                  Digunakan saat detail atau tepi gambar ingin dibuat lebih menonjol sehingga terlihat lebih tegas.
                 </p>
               </div>
             </div>
@@ -326,27 +311,29 @@
           <article class="panel">
             <h3>Bagian kedua: domain frekuensi</h3>
             <p>
-              Nah, kalau domain frekuensi, cara berpikirnya sedikit berbeda. Gambar tidak lagi dilihat hanya sebagai kumpulan piksel,
-              tapi juga sebagai kumpulan komponen frekuensi. Supaya tidak terlalu rumit, jelaskan saja begini: bagian yang halus cenderung terkait dengan frekuensi rendah,
-              sedangkan detail tajam dan tepi berkaitan dengan frekuensi yang lebih tinggi.
+              Kalau di domain spasial kita langsung menyentuh piksel, di domain frekuensi kita melihat gambar dari sudut pandang yang berbeda.
+              Bagian yang halus berkaitan dengan frekuensi rendah, sedangkan detail yang tajam berkaitan dengan frekuensi yang lebih tinggi.
             </p>
             <p>
-              Pada praktikum ini, FFT digunakan untuk membawa gambar ke domain frekuensi, lalu dipasang low-pass filter.
-              Efek sederhananya adalah gambar menjadi lebih halus karena komponen frekuensi tinggi ditekan.
+              Pada praktikum ini dipakai FFT lalu diterapkan low-pass filter. Efek sederhananya, komponen frekuensi tinggi ditekan sehingga hasil gambar terasa lebih halus.
             </p>
+          </article>
+
+          <article class="panel">
+            <h3>Apa yang dilakukan pada praktikum?</h3>
             <ol>
-              <li>Gambar diubah dulu ke domain frekuensi.</li>
-              <li>Bagian frekuensi rendah dipertahankan dengan low-pass filter.</li>
-              <li>Setelah itu hasilnya dikembalikan lagi ke bentuk gambar.</li>
-              <li>Perbedaan hasilnya diamati secara visual.</li>
+              <li>Untuk domain spasial, gambar diproses dengan equalization, blur, dan sharpen.</li>
+              <li>Untuk domain frekuensi, gambar dibawa ke domain frekuensi dengan FFT.</li>
+              <li>Lalu diterapkan low-pass filter.</li>
+              <li>Setelah itu hasilnya dikembalikan lagi ke bentuk gambar agar bisa dibandingkan.</li>
             </ol>
           </article>
 
           <article class="panel">
-            <h3>Yang perlu ditekankan saat mengajar</h3>
+            <h3>Inti dari materi ini</h3>
             <p>
-              Jangan terlalu lama di rumus. Lebih baik tunjukkan efeknya. Misalnya, blur bikin gambar lebih lembut,
-              sharpen bikin detail lebih keluar, sedangkan low-pass cenderung membuat hasil lebih halus. Dari situ mahasiswa biasanya lebih gampang menerima konsepnya.
+              Satu gambar bisa diperbaiki kualitas tampilannya lewat lebih dari satu cara.
+              Ada cara yang langsung bekerja pada piksel, dan ada cara yang bekerja lewat komponen frekuensi.
             </p>
           </article>
         </div>
@@ -355,7 +342,7 @@
           <article class="demo-card" data-demo="enhancement-spatial">
             <div class="demo-card__header">
               <h3>Demo Domain Spasial</h3>
-              <p>Pindah hasil tampilan untuk membandingkan perubahan citra.</p>
+              <p>Bandingkan hasil tiap proses peningkatan citra.</p>
             </div>
 
             <div class="demo-controls demo-controls--wrap">
@@ -377,8 +364,8 @@
           <article class="summary-box">
             <h3>Gagasan sederhananya</h3>
             <p>
-              Kalau domain spasial bekerja langsung pada piksel, maka domain frekuensi bekerja lewat komponen frekuensi gambar.
-              Walau jalurnya beda, tujuannya sama: membuat informasi visual pada citra menjadi lebih mudah diamati.
+              Domain spasial langsung menyentuh piksel. Domain frekuensi melihat gambar dari sisi komponen frekuensi.
+              Jalurnya berbeda, tapi tujuannya sama-sama membantu membuat gambar lebih mudah diamati.
             </p>
           </article>
         </aside>
@@ -389,32 +376,32 @@
       <div class="section-heading">
         <h2>Restorasi Citra Statistik</h2>
         <p>
-          Setelah belajar meningkatkan gambar, sekarang masuk ke situasi yang lebih spesifik, yaitu saat gambar sudah terganggu noise.
-          Di sini mahasiswa dikenalkan pada ide restorasi: bagaimana cara memperbaiki gambar yang kualitasnya menurun agar hasilnya mendekati gambar asli.
+          Kalau tadi fokusnya membuat gambar lebih jelas, sekarang fokusnya bergeser: bagaimana kalau gambarnya sudah terganggu noise?
+          Di sinilah mahasiswa mulai dikenalkan pada ide restorasi.
         </p>
       </div>
 
       <div class="content-grid">
         <div class="content-main">
           <article class="panel">
-            <h3>Mulai dari memahami masalahnya</h3>
+            <h3>Masalah yang dihadapi: noise</h3>
             <p>
-              Gambar bisa rusak karena banyak hal, salah satunya noise. Pada praktikum ini yang digunakan adalah salt-and-pepper noise,
-              yaitu noise yang muncul seperti bintik-bintik hitam dan putih di beberapa bagian gambar. Noise seperti ini membuat gambar terlihat kotor dan mengganggu.
+              Pada praktikum ini, noise yang dipakai adalah salt-and-pepper noise. Bentuknya seperti bintik-bintik hitam dan putih yang muncul di gambar.
+              Noise seperti ini membuat gambar terlihat kotor dan mengganggu detail yang seharusnya terlihat.
             </p>
           </article>
 
           <article class="panel">
             <h3>Kenapa median filter dipakai?</h3>
             <p>
-              Karena median filter cukup bagus untuk menangani salt-and-pepper noise. Penjelasan gampangnya, filter ini melihat nilai piksel di sekitar,
-              lalu memilih nilai tengah yang dianggap lebih aman daripada langsung mengambil rata-rata. Jadi bintik-bintik ekstrem bisa ditekan.
+              Karena median filter cukup cocok untuk mengurangi salt-and-pepper noise.
+              Filter ini melihat nilai piksel di sekitarnya lalu memilih nilai tengah, sehingga nilai-nilai yang terlalu ekstrem bisa ditekan.
             </p>
             <div class="mini-card-grid">
               <div class="mini-card">
                 <h4>Noisy Image</h4>
                 <p>
-                  Gambar yang sudah ditambahkan noise, sehingga tampilannya menjadi kotor.
+                  Gambar yang sudah terkena noise, sehingga tampilannya jadi kotor.
                 </p>
               </div>
               <div class="mini-card">
@@ -426,7 +413,7 @@
               <div class="mini-card">
                 <h4>Evaluasi</h4>
                 <p>
-                  Hasil restorasi tidak cuma dilihat dengan mata, tapi juga diukur menggunakan MSE dan PSNR.
+                  Hasil restorasi dilihat secara visual dan juga diukur memakai MSE dan PSNR.
                 </p>
               </div>
             </div>
@@ -435,12 +422,11 @@
           <article class="panel">
             <h3>Bagaimana membaca MSE dan PSNR?</h3>
             <p>
-              MSE itu gampangnya ukuran seberapa besar selisih antara gambar asli dan gambar hasil restorasi. Semakin kecil nilainya, biasanya semakin bagus.
-              Sementara PSNR dipakai untuk melihat kualitas hasil restorasi dengan membandingkan sinyal dan noise. Semakin besar nilainya, umumnya semakin baik.
+              MSE menunjukkan seberapa besar selisih antara gambar asli dan gambar hasil restorasi. Semakin kecil, berarti error-nya semakin kecil.
+              PSNR dipakai untuk melihat kualitas hasil restorasi. Semakin besar, biasanya kualitas hasilnya semakin baik.
             </p>
             <p>
-              Jadi saat mahasiswa melihat angka-angka ini, mereka tidak perlu takut. Cukup pegang aturan sederhananya saja:
-              MSE kecil itu bagus, PSNR besar itu bagus.
+              Jadi aturan gampangnya cukup begini: MSE kecil itu bagus, PSNR besar itu bagus.
             </p>
           </article>
         </div>
@@ -448,8 +434,8 @@
         <aside class="content-side">
           <article class="demo-card" data-demo="restoration-statistic">
             <div class="demo-card__header">
-              <h3>Area Demo</h3>
-              <p>Bandingkan gambar asli, noisy, dan hasil restorasi.</p>
+              <h3>Demo Restorasi</h3>
+              <p>Bandingkan gambar asli, gambar yang rusak, dan hasil perbaikannya.</p>
             </div>
 
             <div class="demo-controls demo-controls--wrap">
@@ -463,7 +449,7 @@
             </div>
 
             <div class="demo-caption" id="demo-restoration-caption">
-              Gambar asli dipakai sebagai pembanding utama sebelum noise ditambahkan.
+              Gambar asli dipakai sebagai acuan utama sebelum noise ditambahkan.
             </div>
           </article>
 
@@ -490,50 +476,48 @@
       <div class="section-heading">
         <h2>Restorasi Citra Berbasis CNN</h2>
         <p>
-          Bagian ini adalah jembatan ke pendekatan yang lebih modern. Kalau sebelumnya restorasi dilakukan dengan filter statistik,
-          sekarang mahasiswa diperlihatkan contoh bagaimana model CNN bisa belajar dari data untuk memperbaiki gambar yang rusak.
+          Di bagian ini mahasiswa mulai melihat bahwa memperbaiki gambar tidak selalu harus memakai aturan filter yang ditentukan manual.
+          Ada juga pendekatan yang membuat model belajar dari data, salah satunya adalah CNN.
         </p>
       </div>
 
       <div class="content-grid content-grid--wide">
         <div class="content-main">
           <article class="panel">
-            <h3>Mulai dari ide sederhananya dulu</h3>
+            <h3>Gagasan sederhananya dulu</h3>
             <p>
-              CNN cocok untuk citra karena model ini memang dirancang untuk menangkap pola-pola visual. Jadi alurnya bisa dijelaskan dengan sangat sederhana:
-              ada gambar asli, lalu gambar itu diberi noise, setelah itu CNN belajar supaya hasil akhirnya kembali mendekati gambar aslinya.
+              CNN cocok untuk citra karena model ini dirancang untuk menangkap pola visual.
+              Pada praktikum, alurnya sederhana: ada gambar asli, lalu gambar itu diberi noise, setelah itu CNN belajar supaya hasil akhirnya kembali mendekati gambar aslinya.
             </p>
             <p>
-              Pada praktikum ini, contoh yang dipakai adalah dataset MNIST. Ini pilihan yang bagus untuk pengantar karena bentuk gambarnya sederhana,
-              yaitu angka tulisan tangan dengan ukuran kecil, sehingga mahasiswa bisa fokus memahami konsep denoising-nya dulu.
+              Dataset yang dipakai adalah MNIST. Ini cocok untuk pengantar karena gambarnya sederhana, yaitu angka tulisan tangan dengan ukuran kecil.
             </p>
           </article>
 
           <article class="panel">
-            <h3>Alur berpikir yang enak dijelaskan</h3>
+            <h3>Apa yang dilakukan pada praktikum?</h3>
             <ol>
-              <li>Ambil gambar asli dari dataset.</li>
-              <li>Tambahkan noise supaya gambar menjadi lebih rusak.</li>
+              <li>Ambil gambar asli dari dataset MNIST.</li>
+              <li>Tambahkan noise supaya gambarnya menjadi lebih rusak.</li>
               <li>Masukkan gambar noisy ke model CNN.</li>
-              <li>Model belajar menghasilkan output yang lebih bersih.</li>
-              <li>Bandingkan noisy, restored, dan original.</li>
+              <li>Biarkan model belajar menghasilkan output yang lebih bersih.</li>
+              <li>Bandingkan hasil noisy, restored, dan original.</li>
             </ol>
+          </article>
+
+          <article class="panel">
+            <h3>Kenapa bagian ini penting?</h3>
             <p>
-              Dengan alur ini, mahasiswa tidak perlu langsung dibebani detail rumit. Yang penting mereka paham bahwa CNN tidak bekerja asal tebak,
-              tapi belajar dari data contoh.
+              Karena di sini mahasiswa mulai melihat perbedaan dua cara berpikir.
+              Metode klasik bekerja dengan aturan yang sudah ditentukan, sedangkan CNN belajar dari data contoh.
             </p>
           </article>
 
           <article class="panel">
-            <h3>Penjelasan arsitekturnya secara manusiawi</h3>
+            <h3>Inti dari materi ini</h3>
             <p>
-              Di praktikum, model yang dipakai masih sederhana. Input-nya adalah citra 28 × 28 × 1. Setelah itu ada beberapa layer konvolusi.
-              Tidak perlu langsung menjelaskan semuanya dengan istilah berat. Cukup bilang bahwa layer-layer ini membantu model menangkap pola,
-              mempelajari bentuk angka, dan membedakan mana bagian yang tampaknya noise dan mana bagian yang memang struktur gambar.
-            </p>
-            <p>
-              Jadi saat hasil restorasi tampil lebih bersih, mahasiswa bisa paham bahwa model sedang berusaha mempertahankan bentuk utama angka,
-              sambil mengurangi gangguan yang tidak perlu.
+              Mahasiswa tidak harus langsung paham semua detail modelnya. Yang paling penting adalah mereka paham alurnya:
+              gambar rusak masuk ke model, model mencoba memperbaikinya, lalu hasilnya dibandingkan dengan gambar asli.
             </p>
           </article>
         </div>
@@ -542,7 +526,7 @@
           <article class="demo-card demo-card--cnn">
             <div class="demo-card__header">
               <h3>Alur Denoising</h3>
-              <p>Lihat jalur sederhananya dari gambar asli sampai hasil restorasi.</p>
+              <p>Lihat jalur sederhananya dari gambar awal sampai hasil restorasi.</p>
             </div>
 
             <div class="flow-steps">
@@ -569,10 +553,10 @@
           </article>
 
           <article class="summary-box">
-            <h3>Inti yang perlu dibawa pulang</h3>
+            <h3>Bedanya dengan metode sebelumnya</h3>
             <p>
-              Metode klasik memperbaiki gambar dengan aturan yang sudah ditentukan, sedangkan CNN belajar dari data.
-              Itulah kenapa pendekatan modern ini menarik untuk dikenalkan, meskipun di tahap awal cukup dipahami konsep dasarnya dulu.
+              Kalau median filter memakai aturan yang sudah ditentukan, CNN belajar dari data.
+              Tujuannya sama-sama memperbaiki gambar, tapi cara kerjanya berbeda.
             </p>
           </article>
         </aside>
@@ -583,7 +567,7 @@
       <div class="section-heading">
         <h2>Referensi dan catatan akhir</h2>
         <p>
-          Bagian ini bisa dipakai untuk menaruh sumber, tools, atau catatan tambahan yang membantu mahasiswa saat ingin mengulang materi.
+          Bagian ini bisa dipakai untuk menaruh sumber, tools, atau catatan tambahan supaya mahasiswa bisa mengulang materi dengan lebih mudah.
         </p>
       </div>
 
@@ -599,10 +583,9 @@
         </article>
 
         <article class="panel">
-          <h3>Catatan penting</h3>
+          <h3>Penutup singkat</h3>
           <p>
-            Demo yang ada di web ini nantinya lebih cocok dipakai untuk membantu pemahaman konsep dan melihat perubahan hasil.
-            Jadi fungsinya bukan menggantikan notebook praktikum, melainkan menemani notebook supaya penjelasannya terasa lebih hidup.
+            Harapannya, setelah melihat web ini, mahasiswa tidak cuma tahu hasil akhirnya, tetapi juga paham jalur berpikir dari tiap materi.
           </p>
         </article>
       </div>

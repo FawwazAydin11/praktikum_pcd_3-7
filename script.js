@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const topbarLinks = document.querySelectorAll('.topbar__nav a');
+  const sections = document.querySelectorAll('section[id]');
+
+  const setActiveNav = () => {
+    let currentId = '';
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 130;
+      const sectionHeight = section.offsetHeight;
+
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        currentId = section.getAttribute('id');
+      }
+    });
+
+    topbarLinks.forEach((link) => {
+      link.classList.remove('is-current');
+      const href = link.getAttribute('href');
+
+      if (href === `#${currentId}`) {
+        link.classList.add('is-current');
+      }
+    });
+  };
+
   const setupSingleImageDemo = ({
     buttonSelector,
     imageSelector,
@@ -12,20 +37,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!buttons.length || !image || !caption) return;
 
+    const setDemoState = (key) => {
+      const selected = config[key];
+      if (!selected) return;
+
+      buttons.forEach((btn) => {
+        btn.classList.toggle('is-active', btn.dataset[dataAttribute] === key);
+      });
+
+      image.src = selected.src;
+      image.alt = selected.alt;
+      caption.textContent = selected.caption;
+    };
+
     buttons.forEach((button) => {
       button.addEventListener('click', () => {
         const key = button.dataset[dataAttribute];
-        const selected = config[key];
-
-        if (!selected) return;
-
-        buttons.forEach((btn) => btn.classList.remove('is-active'));
-        button.classList.add('is-active');
-
-        image.src = selected.src;
-        image.alt = selected.alt;
-        caption.textContent = selected.caption;
+        setDemoState(key);
       });
+    });
+
+    const defaultButton = document.querySelector(`${buttonSelector}.is-active`) || buttons[0];
+    if (defaultButton) {
+      setDemoState(defaultButton.dataset[dataAttribute]);
+    }
+
+    image.addEventListener('error', () => {
+      image.src = 'https://placehold.co/800x600/eef3ff/1f45b6?text=Gambar+demo+belum+disiapkan';
+      caption.textContent = 'Gambar demo belum tersedia. Nanti tinggal ganti file gambar di folder assets/images sesuai nama yang dipakai.';
     });
   };
 
@@ -38,17 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
       rgb: {
         src: 'assets/images/pcd-sample-rgb.jpg',
         alt: 'Contoh citra dalam mode RGB',
-        caption: 'Mode RGB menampilkan warna citra seperti yang terlihat pada gambar asli.',
+        caption: 'Mode RGB menampilkan gambar dengan warna yang paling dekat dengan foto aslinya.',
       },
       gray: {
         src: 'assets/images/pcd-sample-gray.jpg',
         alt: 'Contoh citra dalam mode grayscale',
-        caption: 'Mode grayscale hanya menampilkan intensitas terang dan gelap tanpa informasi warna.',
+        caption: 'Mode grayscale menghilangkan informasi warna dan hanya menyisakan tingkat terang dan gelap.',
       },
       hsv: {
         src: 'assets/images/pcd-sample-hsv.jpg',
         alt: 'Contoh citra dalam mode HSV',
-        caption: 'Mode HSV memisahkan warna berdasarkan hue, saturation, dan value sehingga representasinya berbeda dari RGB.',
+        caption: 'Mode HSV membantu melihat warna dari sisi hue, saturation, dan value, jadi tampilannya bisa terasa berbeda dari RGB.',
       },
     },
   });
@@ -62,27 +101,27 @@ document.addEventListener('DOMContentLoaded', () => {
       original: {
         src: 'assets/images/transform-original.jpg',
         alt: 'Citra asli untuk demo transformasi',
-        caption: 'Gambar asli digunakan sebagai acuan sebelum transformasi diterapkan.',
+        caption: 'Ini adalah gambar awal sebelum diubah ukuran, diputar, dibalik, atau digeser.',
       },
       resize: {
         src: 'assets/images/transform-resize.jpg',
         alt: 'Hasil resize pada citra',
-        caption: 'Resize mengubah ukuran citra sehingga tampilan menjadi lebih kecil atau lebih besar dari ukuran awal.',
+        caption: 'Resize mengubah ukuran gambar. Isi gambarnya tetap sama, tetapi tampilannya menjadi lebih kecil atau lebih besar.',
       },
       rotate: {
         src: 'assets/images/transform-rotate.jpg',
         alt: 'Hasil rotasi pada citra',
-        caption: 'Rotate memutar orientasi citra. Pada praktikum, contoh yang digunakan adalah rotasi 90 derajat.',
+        caption: 'Rotate memutar gambar. Pada contoh praktikum, gambar diputar 90 derajat sehingga orientasinya berubah jelas.',
       },
       flip: {
         src: 'assets/images/transform-flip.jpg',
         alt: 'Hasil flip pada citra',
-        caption: 'Flip membalik citra. Pada contoh ini, pembalikan dilakukan secara horizontal.',
+        caption: 'Flip membalik gambar. Kalau horizontal, sisi kiri dan kanan seakan bertukar tempat.',
       },
       translate: {
         src: 'assets/images/transform-translate.jpg',
         alt: 'Hasil translasi pada citra',
-        caption: 'Translate menggeser posisi citra ke arah tertentu tanpa mengubah isi utamanya.',
+        caption: 'Translate menggeser posisi gambar ke arah tertentu tanpa mengubah bentuk objek utamanya.',
       },
     },
   });
@@ -96,22 +135,22 @@ document.addEventListener('DOMContentLoaded', () => {
       original: {
         src: 'assets/images/enhance-original.jpg',
         alt: 'Citra asli sebelum peningkatan domain spasial',
-        caption: 'Tampilan awal citra sebelum proses peningkatan dilakukan.',
+        caption: 'Ini adalah tampilan awal gambar sebelum proses peningkatan dilakukan.',
       },
       equalized: {
         src: 'assets/images/enhance-equalized.jpg',
         alt: 'Hasil histogram equalization pada citra',
-        caption: 'Histogram equalization membantu menyebarkan intensitas piksel sehingga kontras citra menjadi lebih jelas.',
+        caption: 'Histogram equalization membantu membuat persebaran intensitas lebih merata, sehingga bagian gambar bisa terlihat lebih jelas.',
       },
       blur: {
         src: 'assets/images/enhance-blur.jpg',
         alt: 'Hasil Gaussian blur pada citra',
-        caption: 'Gaussian blur menghaluskan citra dan mengurangi detail halus serta noise tertentu.',
+        caption: 'Gaussian blur membuat gambar terasa lebih halus karena detail-detail kecil dan gangguan tertentu ikut dilembutkan.',
       },
       sharpen: {
         src: 'assets/images/enhance-sharpen.jpg',
         alt: 'Hasil sharpening pada citra',
-        caption: 'Sharpening menonjolkan tepi dan detail sehingga citra tampak lebih tajam.',
+        caption: 'Sharpening menonjolkan tepi dan detail supaya gambar terlihat lebih tegas.',
       },
     },
   });
@@ -125,46 +164,22 @@ document.addEventListener('DOMContentLoaded', () => {
       original: {
         src: 'assets/images/restoration-original.jpg',
         alt: 'Citra asli sebelum restorasi',
-        caption: 'Citra asli menjadi acuan sebelum noise ditambahkan.',
+        caption: 'Gambar asli dipakai sebagai patokan utama untuk melihat seberapa jauh hasil restorasi mendekati kondisi awal.',
       },
       noisy: {
         src: 'assets/images/restoration-noisy.jpg',
         alt: 'Citra setelah ditambahkan salt and pepper noise',
-        caption: 'Salt-and-pepper noise menambahkan gangguan berupa titik-titik hitam dan putih pada citra.',
+        caption: 'Salt-and-pepper noise terlihat seperti bintik-bintik hitam dan putih yang mengganggu tampilan gambar.',
       },
       restored: {
         src: 'assets/images/restoration-restored.jpg',
         alt: 'Citra setelah diproses median filter',
-        caption: 'Median filter membantu mengurangi salt-and-pepper noise sehingga citra hasil restorasi lebih mendekati citra asli.',
+        caption: 'Setelah median filter diterapkan, gangguan noise berkurang dan bentuk utama gambar bisa terlihat lebih bersih.',
       },
     },
   });
 
-  const navLinks = document.querySelectorAll('.sidebar__nav a');
-  const sections = document.querySelectorAll('section[id]');
-
-  const setActiveNav = () => {
-    let currentId = '';
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        currentId = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove('is-current');
-      const href = link.getAttribute('href');
-
-      if (href === `#${currentId}`) {
-        link.classList.add('is-current');
-      }
-    });
-  };
-
   setActiveNav();
   window.addEventListener('scroll', setActiveNav);
+  window.addEventListener('resize', setActiveNav);
 });

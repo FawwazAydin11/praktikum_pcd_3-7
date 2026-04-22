@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Pembelajaran Praktikum Pengolahan Citra Digital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <p class="sidebar__label">Modul Interaktif</p>
+        <h1>Praktikum Pengolahan Citra Digital</h1>
+        <p class="sidebar__desc">Materi pertemuan 3 sampai 7 yang disusun agar sejalan dengan alur praktikum.</p>
+      </div>
+
+      <nav class="sidebar__nav">
+        <p class="sidebar__nav-title">Navigasi</p>
+        <a href="#beranda">Beranda</a>
+        <a href="#materi-3">Materi 3</a>
+        <a href="#materi-4">Materi 4</a>
+        <a href="#materi-5">Materi 5</a>
+        <a href="#materi-6">Materi 6</a>
+        <a href="#materi-7">Materi 7</a>
+        <a href="#referensi">Referensi</a>
+      </nav>
+
+      <div class="sidebar__info-card">
+        <h2>Catatan</h2>
+        <p>
+          Web ini dirancang untuk membantu penjelasan konsep, alur praktikum, dan visualisasi hasil.
+          Beberapa demo bisa dibuat interaktif, sedangkan bagian CNN lebih cocok ditampilkan sebagai simulasi visual dan hasil contoh.
+        </p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section id="beranda" class="hero section-block">
+        <div class="hero__text">
+          <p class="eyebrow">Media Pembelajaran</p>
+          <h2>Materi Praktikum Pengolahan Citra Digital</h2>
+          <p>
+            Halaman ini memuat ringkasan materi inti, alur praktikum, dan area demo untuk topik format citra,
+            transformasi, peningkatan citra, restorasi statistik, dan restorasi berbasis CNN.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#materi-3">Mulai Belajar</a>
+            <a class="btn btn--secondary" href="#referensi">Lihat Referensi</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="overview section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Ringkasan Materi</p>
+          <h2>Gambaran umum pertemuan 3 sampai 7</h2>
+          <p>Urutan materi dibuat runtut agar mahasiswa memahami konsep dari dasar sampai penerapan restorasi modern.</p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="overview-card">
+            <span class="overview-card__number">3</span>
+            <h3>Format Citra dan Model Warna</h3>
+            <p>Memahami citra sebagai kumpulan piksel dan membandingkan representasi RGB, grayscale, dan HSV.</p>
+          </article>
+
+          <article class="overview-card">
+            <span class="overview-card__number">4</span>
+            <h3>Transformasi Citra</h3>
+            <p>Menjelaskan perubahan ukuran, orientasi, pembalikan, dan pergeseran citra.</p>
+          </article>
+
+          <article class="overview-card">
+            <span class="overview-card__number">5</span>
+            <h3>Peningkatan Citra</h3>
+            <p>Memperkenalkan peningkatan citra pada domain spasial dan domain frekuensi.</p>
+          </article>
+
+          <article class="overview-card">
+            <span class="overview-card__number">6</span>
+            <h3>Restorasi Statistik</h3>
+            <p>Membahas noise, median filter, serta evaluasi hasil menggunakan MSE dan PSNR.</p>
+          </article>
+
+          <article class="overview-card">
+            <span class="overview-card__number">7</span>
+            <h3>Restorasi Berbasis CNN</h3>
+            <p>Menunjukkan ide dasar denoising modern menggunakan CNN pada citra sederhana.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="materi-3" class="material section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Materi 3</p>
+          <h2>Format Citra dan Model Warna</h2>
+          <p>
+            Fokus materi ini adalah memahami citra digital sebagai data piksel dan melihat bagaimana satu gambar yang sama dapat
+            direpresentasikan dalam model warna yang berbeda.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-main">
+            <article class="panel">
+              <h3>Tujuan Pembelajaran</h3>
+              <ul>
+                <li>Memahami bahwa citra digital tersusun dari piksel.</li>
+                <li>Mengetahui arti dimensi citra.</li>
+                <li>Membedakan tampilan RGB, grayscale, dan HSV.</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <h3>Konsep Inti</h3>
+              <p>
+                Citra digital dapat dipandang sebagai matriks yang berisi nilai piksel. Pada citra berwarna, tiap piksel umumnya memiliki
+                tiga kanal, sedangkan pada grayscale hanya menyimpan intensitas terang dan gelap.
+              </p>
+              <div class="mini-card-grid">
+                <div class="mini-card">
+                  <h4>RGB</h4>
+                  <p>Menampilkan citra berdasarkan komponen merah, hijau, dan biru.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>Grayscale</h4>
+                  <p>Menampilkan intensitas tanpa informasi warna.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>HSV</h4>
+                  <p>Mewakili warna berdasarkan hue, saturation, dan value.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <h3>Alur Praktikum</h3>
+              <ol>
+                <li>Membaca gambar menggunakan OpenCV.</li>
+                <li>Menampilkan ukuran atau dimensi citra.</li>
+                <li>Mengonversi citra ke RGB.</li>
+                <li>Mengonversi citra ke grayscale.</li>
+                <li>Mengonversi citra ke HSV.</li>
+                <li>Membandingkan hasil konversi dalam satu tampilan.</li>
+              </ol>
+            </article>
+          </div>
+
+          <aside class="content-side">
+            <article class="demo-card" data-demo="color-mode">
+              <div class="demo-card__header">
+                <h3>Area Demo</h3>
+                <p>Pilih representasi warna untuk melihat perubahan tampilan citra.</p>
+              </div>
+
+              <div class="demo-controls">
+                <button class="demo-btn is-active" data-target-mode="rgb">RGB</button>
+                <button class="demo-btn" data-target-mode="gray">Grayscale</button>
+                <button class="demo-btn" data-target-mode="hsv">HSV</button>
+              </div>
+
+              <div class="demo-preview demo-preview--image">
+                <img id="demo-color-image" src="assets/images/pcd-sample-rgb.jpg" alt="Contoh citra untuk demo model warna" />
+              </div>
+
+              <div class="demo-caption" id="demo-color-caption">
+                Mode RGB menampilkan warna citra seperti yang terlihat pada gambar asli.
+              </div>
+            </article>
+
+            <article class="summary-box">
+              <h3>Rangkuman Singkat</h3>
+              <p>
+                Satu citra bisa memiliki tampilan berbeda tergantung model warna yang digunakan. Grayscale menonjolkan intensitas,
+                sedangkan HSV membantu memisahkan komponen warna dengan cara yang berbeda dari RGB.
+              </p>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section id="materi-4" class="material section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Materi 4</p>
+          <h2>Transformasi Citra</h2>
+          <p>
+            Pada bagian ini, mahasiswa diajak melihat bahwa citra dapat diubah ukuran, diputar, dibalik, dan digeser tanpa mengganti objek utamanya.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-main">
+            <article class="panel">
+              <h3>Tujuan Pembelajaran</h3>
+              <ul>
+                <li>Memahami konsep transformasi dasar citra.</li>
+                <li>Membedakan resize, rotate, flip, dan translate.</li>
+                <li>Menjelaskan pengaruh tiap transformasi terhadap tampilan citra.</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <h3>Konsep Inti</h3>
+              <div class="mini-card-grid">
+                <div class="mini-card">
+                  <h4>Resize</h4>
+                  <p>Mengubah ukuran citra menjadi lebih kecil atau lebih besar.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>Rotate</h4>
+                  <p>Memutar citra pada sudut tertentu.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>Flip</h4>
+                  <p>Membalik citra secara horizontal atau vertikal.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>Translate</h4>
+                  <p>Menggeser posisi citra pada bidang tampilan.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <h3>Alur Praktikum</h3>
+              <ol>
+                <li>Menyiapkan citra asli.</li>
+                <li>Mengubah ukuran citra menggunakan fungsi resize.</li>
+                <li>Memutar citra 90 derajat.</li>
+                <li>Membalik citra secara horizontal.</li>
+                <li>Menggeser citra menggunakan matriks translasi.</li>
+                <li>Membandingkan semua hasil dalam satu tampilan.</li>
+              </ol>
+            </article>
+          </div>
+
+          <aside class="content-side">
+            <article class="demo-card" data-demo="transform">
+              <div class="demo-card__header">
+                <h3>Area Demo</h3>
+                <p>Pilih jenis transformasi untuk menampilkan hasil perubahan citra.</p>
+              </div>
+
+              <div class="demo-controls demo-controls--wrap">
+                <button class="demo-btn is-active" data-transform="original">Original</button>
+                <button class="demo-btn" data-transform="resize">Resize</button>
+                <button class="demo-btn" data-transform="rotate">Rotate</button>
+                <button class="demo-btn" data-transform="flip">Flip</button>
+                <button class="demo-btn" data-transform="translate">Translate</button>
+              </div>
+
+              <div class="demo-preview demo-preview--image">
+                <img id="demo-transform-image" src="assets/images/transform-original.jpg" alt="Contoh citra untuk demo transformasi" />
+              </div>
+
+              <div class="demo-caption" id="demo-transform-caption">
+                Gambar asli digunakan sebagai acuan sebelum transformasi diterapkan.
+              </div>
+            </article>
+
+            <article class="summary-box">
+              <h3>Rangkuman Singkat</h3>
+              <p>
+                Transformasi citra digunakan saat ukuran, orientasi, atau posisi gambar perlu disesuaikan. Setiap transformasi memberi hasil visual yang berbeda.
+              </p>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section id="materi-5" class="material section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Materi 5</p>
+          <h2>Peningkatan Citra dalam Domain Spasial dan Frekuensi</h2>
+          <p>
+            Materi ini memperlihatkan dua pendekatan peningkatan citra. Pertama, operasi langsung pada piksel. Kedua, pengolahan citra melalui komponen frekuensi.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-main">
+            <article class="panel">
+              <h3>Tujuan Pembelajaran</h3>
+              <ul>
+                <li>Memahami peningkatan citra pada domain spasial.</li>
+                <li>Mengenal peningkatan citra pada domain frekuensi.</li>
+                <li>Menjelaskan efek equalization, blur, sharpen, dan low-pass filter.</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <h3>Domain Spasial</h3>
+              <p>
+                Domain spasial bekerja langsung pada nilai piksel. Pada praktikum, contoh yang digunakan adalah histogram equalization,
+                Gaussian blur, dan sharpening.
+              </p>
+              <div class="mini-card-grid">
+                <div class="mini-card">
+                  <h4>Equalization</h4>
+                  <p>Membantu menyebarkan intensitas agar kontras citra lebih baik.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>Gaussian Blur</h4>
+                  <p>Menghaluskan citra dan mengurangi detail halus.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>Sharpening</h4>
+                  <p>Menonjolkan tepi dan detail agar citra terlihat lebih tajam.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <h3>Domain Frekuensi</h3>
+              <p>
+                Domain frekuensi digunakan untuk melihat komponen frekuensi rendah dan tinggi pada citra. Pada praktikum, FFT digunakan
+                bersama low-pass filter untuk menghasilkan tampilan citra yang lebih halus.
+              </p>
+              <ol>
+                <li>Mengubah citra ke domain frekuensi menggunakan FFT.</li>
+                <li>Memusatkan spektrum frekuensi.</li>
+                <li>Membuat mask low-pass.</li>
+                <li>Mengembalikan hasil ke domain spasial.</li>
+              </ol>
+            </article>
+          </div>
+
+          <aside class="content-side">
+            <article class="demo-card" data-demo="enhancement-spatial">
+              <div class="demo-card__header">
+                <h3>Demo Domain Spasial</h3>
+                <p>Lihat perubahan citra setelah proses peningkatan diterapkan.</p>
+              </div>
+
+              <div class="demo-controls demo-controls--wrap">
+                <button class="demo-btn is-active" data-enhance="original">Original</button>
+                <button class="demo-btn" data-enhance="equalized">Equalized</button>
+                <button class="demo-btn" data-enhance="blur">Blur</button>
+                <button class="demo-btn" data-enhance="sharpen">Sharpen</button>
+              </div>
+
+              <div class="demo-preview demo-preview--image">
+                <img id="demo-enhance-image" src="assets/images/enhance-original.jpg" alt="Contoh citra untuk demo peningkatan domain spasial" />
+              </div>
+
+              <div class="demo-caption" id="demo-enhance-caption">
+                Tampilan awal citra sebelum proses peningkatan dilakukan.
+              </div>
+            </article>
+
+            <article class="demo-card demo-card--secondary" data-demo="enhancement-frequency">
+              <div class="demo-card__header">
+                <h3>Demo Domain Frekuensi</h3>
+                <p>Ilustrasi hasil low-pass filter pada citra.</p>
+              </div>
+
+              <div class="demo-preview demo-preview--image">
+                <img src="assets/images/lowpass-result.jpg" alt="Ilustrasi hasil low pass filter" />
+              </div>
+
+              <div class="demo-caption">
+                Low-pass filter mempertahankan komponen frekuensi rendah sehingga citra terlihat lebih halus.
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section id="materi-6" class="material section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Materi 6</p>
+          <h2>Restorasi Citra Statistik</h2>
+          <p>
+            Bagian ini berfokus pada pemulihan citra yang terkena noise menggunakan pendekatan statistik sederhana, yaitu median filter.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-main">
+            <article class="panel">
+              <h3>Tujuan Pembelajaran</h3>
+              <ul>
+                <li>Memahami arti restorasi citra.</li>
+                <li>Mengenali salt-and-pepper noise.</li>
+                <li>Memahami fungsi median filter.</li>
+                <li>Mengetahui evaluasi hasil menggunakan MSE dan PSNR.</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <h3>Konsep Inti</h3>
+              <div class="mini-card-grid">
+                <div class="mini-card">
+                  <h4>Noise</h4>
+                  <p>Gangguan pada citra yang membuat kualitas visual menurun.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>Median Filter</h4>
+                  <p>Filter yang efektif untuk mengurangi salt-and-pepper noise.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>MSE</h4>
+                  <p>Nilai error rata-rata antara citra asli dan citra hasil restorasi.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>PSNR</h4>
+                  <p>Ukuran kualitas hasil restorasi dengan membandingkan sinyal dan noise.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <h3>Alur Praktikum</h3>
+              <ol>
+                <li>Menyiapkan citra grayscale.</li>
+                <li>Menambahkan salt-and-pepper noise.</li>
+                <li>Menerapkan median filter.</li>
+                <li>Membandingkan citra asli, noisy, dan restored.</li>
+                <li>Menghitung MSE dan PSNR untuk mengevaluasi hasil.</li>
+              </ol>
+            </article>
+          </div>
+
+          <aside class="content-side">
+            <article class="demo-card" data-demo="restoration-statistic">
+              <div class="demo-card__header">
+                <h3>Area Demo</h3>
+                <p>Bandingkan citra sebelum dan sesudah proses restorasi.</p>
+              </div>
+
+              <div class="demo-controls demo-controls--wrap">
+                <button class="demo-btn is-active" data-restore="original">Original</button>
+                <button class="demo-btn" data-restore="noisy">Noisy</button>
+                <button class="demo-btn" data-restore="restored">Restored</button>
+              </div>
+
+              <div class="demo-preview demo-preview--image">
+                <img id="demo-restoration-image" src="assets/images/restoration-original.jpg" alt="Contoh citra untuk demo restorasi statistik" />
+              </div>
+
+              <div class="demo-caption" id="demo-restoration-caption">
+                Citra asli menjadi acuan sebelum noise ditambahkan.
+              </div>
+            </article>
+
+            <article class="metric-panel">
+              <h3>Evaluasi Hasil</h3>
+              <div class="metric-grid">
+                <div class="metric-card">
+                  <span class="metric-card__label">MSE</span>
+                  <strong class="metric-card__value">12.98</strong>
+                  <p>Semakin kecil nilainya, semakin baik hasil restorasi.</p>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-card__label">PSNR</span>
+                  <strong class="metric-card__value">36.99 dB</strong>
+                  <p>Semakin besar nilainya, semakin baik kualitas citra.</p>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section id="materi-7" class="material section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Materi 7</p>
+          <h2>Restorasi Citra Berbasis CNN</h2>
+          <p>
+            Materi ini memperkenalkan bagaimana CNN digunakan untuk denoising citra. Contoh yang digunakan berupa citra digit sederhana dari dataset MNIST.
+          </p>
+        </div>
+
+        <div class="content-grid content-grid--wide">
+          <div class="content-main">
+            <article class="panel">
+              <h3>Tujuan Pembelajaran</h3>
+              <ul>
+                <li>Memahami alasan CNN cocok digunakan pada citra.</li>
+                <li>Menjelaskan alur denoising berbasis data.</li>
+                <li>Mengamati hasil restorasi citra setelah diproses model CNN.</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <h3>Konsep Inti</h3>
+              <p>
+                Berbeda dari metode klasik, CNN belajar dari data. Pada contoh praktikum ini, citra asli ditambahkan noise terlebih dahulu,
+                lalu model CNN dilatih untuk mengembalikan citra noisy agar mendekati bentuk aslinya.
+              </p>
+              <div class="mini-card-grid">
+                <div class="mini-card">
+                  <h4>Dataset</h4>
+                  <p>MNIST digunakan sebagai contoh citra sederhana untuk denoising.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>Noise</h4>
+                  <p>Noise ditambahkan agar model memiliki data input yang rusak.</p>
+                </div>
+                <div class="mini-card">
+                  <h4>CNN</h4>
+                  <p>Model mempelajari pola agar output kembali mendekati citra asli.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel">
+              <h3>Arsitektur Sederhana</h3>
+              <ol>
+                <li>Input citra berukuran 28 × 28 × 1.</li>
+                <li>Conv2D pertama dengan 32 filter.</li>
+                <li>Conv2D kedua dengan 32 filter.</li>
+                <li>Conv2D keluaran untuk menghasilkan citra hasil restorasi.</li>
+              </ol>
+            </article>
+
+            <article class="panel">
+              <h3>Alur Praktikum</h3>
+              <ol>
+                <li>Memuat dataset MNIST.</li>
+                <li>Melakukan normalisasi data.</li>
+                <li>Menambahkan noise pada data.</li>
+                <li>Membangun model CNN.</li>
+                <li>Melatih model selama beberapa epoch.</li>
+                <li>Menampilkan hasil noisy, restored, dan original.</li>
+              </ol>
+            </article>
+          </div>
+
+          <aside class="content-side">
+            <article class="demo-card demo-card--cnn">
+              <div class="demo-card__header">
+                <h3>Alur Denoising CNN</h3>
+                <p>Representasi sederhana alur proses restorasi citra berbasis CNN.</p>
+              </div>
+
+              <div class="flow-steps">
+                <div class="flow-step">
+                  <span>1</span>
+                  <p>Original Image</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                  <span>2</span>
+                  <p>Noisy Image</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                  <span>3</span>
+                  <p>CNN Model</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                  <span>4</span>
+                  <p>Restored Image</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="demo-card demo-card--secondary">
+              <div class="demo-card__header">
+                <h3>Galeri Hasil</h3>
+                <p>Contoh susunan visual untuk membandingkan hasil model.</p>
+              </div>
+
+              <div class="mnist-gallery">
+                <div class="mnist-gallery__row">
+                  <span>Noisy</span>
+                  <div class="mnist-gallery__images">
+                    <img src="assets/images/mnist-noisy-1.png" alt="MNIST noisy 1" />
+                    <img src="assets/images/mnist-noisy-2.png" alt="MNIST noisy 2" />
+                    <img src="assets/images/mnist-noisy-3.png" alt="MNIST noisy 3" />
+                  </div>
+                </div>
+                <div class="mnist-gallery__row">
+                  <span>Restored</span>
+                  <div class="mnist-gallery__images">
+                    <img src="assets/images/mnist-restored-1.png" alt="MNIST restored 1" />
+                    <img src="assets/images/mnist-restored-2.png" alt="MNIST restored 2" />
+                    <img src="assets/images/mnist-restored-3.png" alt="MNIST restored 3" />
+                  </div>
+                </div>
+                <div class="mnist-gallery__row">
+                  <span>Original</span>
+                  <div class="mnist-gallery__images">
+                    <img src="assets/images/mnist-original-1.png" alt="MNIST original 1" />
+                    <img src="assets/images/mnist-original-2.png" alt="MNIST original 2" />
+                    <img src="assets/images/mnist-original-3.png" alt="MNIST original 3" />
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="metric-panel">
+              <h3>Info Model</h3>
+              <div class="metric-grid">
+                <div class="metric-card">
+                  <span class="metric-card__label">Dataset</span>
+                  <strong class="metric-card__value">MNIST</strong>
+                  <p>Citra digit sederhana berukuran kecil.</p>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-card__label">Epoch</span>
+                  <strong class="metric-card__value">5</strong>
+                  <p>Digunakan pada contoh pelatihan model sederhana.</p>
+                </div>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section id="referensi" class="reference section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Penutup</p>
+          <h2>Referensi dan Catatan</h2>
+          <p>Bagian ini bisa dipakai untuk menampilkan sumber belajar, tools, dan catatan tambahan untuk mahasiswa.</p>
+        </div>
+
+        <div class="reference-grid">
+          <article class="panel">
+            <h3>Tools yang Digunakan</h3>
+            <ul>
+              <li>OpenCV</li>
+              <li>NumPy</li>
+              <li>Matplotlib</li>
+              <li>TensorFlow</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Catatan Implementasi</h3>
+            <p>
+              Demo interaktif ringan cocok digunakan pada materi 3 sampai 6. Untuk materi 7, hasil lebih aman ditampilkan dalam bentuk visual contoh
+              atau simulasi sederhana agar halaman tetap ringan saat dijalankan.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

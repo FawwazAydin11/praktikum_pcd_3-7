@@ -96,13 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
       gray: {
         src: 'assets/images/pcd-sample-gray.jpg',
         alt: 'Contoh citra dalam mode grayscale',
-        caption: 'Mode grayscale menghilangkan informasi warna dan hanya menyisakan terang serta gelap.',
+        caption: 'Mode grayscale menghilangkan warna dan menyisakan tingkat terang serta gelap.',
         fallbackLabel: 'pcd-sample-gray.jpg',
       },
       hsv: {
         src: 'assets/images/pcd-sample-hsv.jpg',
         alt: 'Contoh citra dalam mode HSV',
-        caption: 'Mode HSV membantu melihat warna dari sisi hue, saturation, dan value, jadi tampilannya terasa berbeda dari RGB.',
+        caption: 'Mode HSV melihat warna dari sisi hue, saturation, dan value, jadi tampilannya terasa beda dari RGB.',
         fallbackLabel: 'pcd-sample-hsv.jpg',
       },
     },
@@ -123,13 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
       resize: {
         src: 'assets/images/transform-resize.jpg',
         alt: 'Hasil resize pada citra',
-        caption: 'Resize mengubah ukuran gambar. Isi gambarnya tetap sama, tetapi tampilannya menjadi lebih kecil atau lebih besar.',
+        caption: 'Resize mengubah ukuran gambar. Isi gambarnya tetap sama, cuma tampilannya jadi lebih kecil atau lebih besar.',
         fallbackLabel: 'transform-resize.jpg',
       },
       rotate: {
         src: 'assets/images/transform-rotate.jpg',
         alt: 'Hasil rotasi pada citra',
-        caption: 'Rotate memutar gambar. Pada contoh praktikum, gambar diputar 90 derajat sehingga orientasinya berubah jelas.',
+        caption: 'Rotate memutar gambar. Contoh yang dipakai di sini adalah rotasi 90 derajat.',
         fallbackLabel: 'transform-rotate.jpg',
       },
       flip: {
@@ -162,19 +162,19 @@ document.addEventListener('DOMContentLoaded', () => {
       equalized: {
         src: 'assets/images/enhance-equalized.jpg',
         alt: 'Hasil histogram equalization pada citra',
-        caption: 'Histogram equalization membantu membuat persebaran intensitas lebih merata, sehingga bagian gambar bisa terlihat lebih jelas.',
+        caption: 'Histogram equalization membantu bikin kontras gambar terasa lebih jelas.',
         fallbackLabel: 'enhance-equalized.jpg',
       },
       blur: {
         src: 'assets/images/enhance-blur.jpg',
         alt: 'Hasil Gaussian blur pada citra',
-        caption: 'Gaussian blur membuat gambar terasa lebih halus karena detail-detail kecil dan gangguan tertentu ikut dilembutkan.',
+        caption: 'Gaussian blur bikin gambar terasa lebih halus karena detail-detail kecil ikut dilembutkan.',
         fallbackLabel: 'enhance-blur.jpg',
       },
       sharpen: {
         src: 'assets/images/enhance-sharpen.jpg',
         alt: 'Hasil sharpening pada citra',
-        caption: 'Sharpening menonjolkan tepi dan detail supaya gambar terlihat lebih tegas.',
+        caption: 'Sharpening bikin tepi dan detail gambar terasa lebih tegas.',
         fallbackLabel: 'enhance-sharpen.jpg',
       },
     },
@@ -189,19 +189,19 @@ document.addEventListener('DOMContentLoaded', () => {
       original: {
         src: 'assets/images/restoration-original.jpg',
         alt: 'Citra asli sebelum restorasi',
-        caption: 'Gambar asli dipakai sebagai patokan utama untuk melihat seberapa dekat hasil restorasi dengan kondisi awal.',
+        caption: 'Gambar asli dipakai sebagai acuan utama buat melihat hasil perbaikannya nanti.',
         fallbackLabel: 'restoration-original.jpg',
       },
       noisy: {
         src: 'assets/images/restoration-noisy.jpg',
         alt: 'Citra setelah ditambahkan salt and pepper noise',
-        caption: 'Salt-and-pepper noise terlihat seperti bintik-bintik hitam dan putih yang mengganggu tampilan gambar.',
+        caption: 'Salt-and-pepper noise terlihat seperti bintik-bintik hitam putih yang mengganggu gambar.',
         fallbackLabel: 'restoration-noisy.jpg',
       },
       restored: {
         src: 'assets/images/restoration-restored.jpg',
         alt: 'Citra setelah diproses median filter',
-        caption: 'Setelah median filter diterapkan, gangguan noise berkurang dan bentuk utama gambar bisa terlihat lebih bersih.',
+        caption: 'Setelah median filter dipakai, gangguan noise berkurang dan bentuk utama gambar jadi lebih jelas.',
         fallbackLabel: 'restoration-restored.jpg',
       },
     },

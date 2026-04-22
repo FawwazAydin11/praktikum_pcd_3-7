@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       gray: {
         src: 'assets/images/pcd-sample-gray.jpg',
         alt: 'Contoh citra dalam mode grayscale',
-        caption: 'Mode grayscale menghilangkan warna dan menyisakan tingkat terang serta gelap.',
+        caption: 'Mode grayscale menghilangkan warna dan menyisakan terang serta gelap.',
         fallbackLabel: 'pcd-sample-gray.jpg',
       },
       hsv: {
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
       resize: {
         src: 'assets/images/transform-resize.jpg',
         alt: 'Hasil resize pada citra',
-        caption: 'Resize mengubah ukuran gambar. Isi gambarnya tetap sama, cuma tampilannya jadi lebih kecil atau lebih besar.',
+        caption: 'Resize mengubah ukuran gambar. Isinya tetap sama, cuma tampilannya jadi lebih kecil atau lebih besar.',
         fallbackLabel: 'transform-resize.jpg',
       },
       rotate: {

@@ -17,6 +17,7 @@
         <a href="#materi-5">Peningkatan</a>
         <a href="#materi-6">Restorasi</a>
         <a href="#materi-7">CNN</a>
+        <a href="#materi-8">Segmentasi</a>
         <a href="#referensi">Referensi</a>
       </nav>
     </div>
@@ -25,234 +26,267 @@
   <main class="main-content main-content--full">
     <section id="beranda" class="hero hero--simple section-block">
       <div class="hero__text hero__text--wide">
+        <p class="hero__eyebrow">Media Pembelajaran Interaktif</p>
         <h1>Media Pembelajaran Praktikum Pengolahan Citra Digital</h1>
         <p>
-          Web ini dipakai buat memahami alur materinya dulu sebelum masuk ke kode. Jadi pas nanti lihat program, rasanya nggak kayak lihat langkah acak,
-          tapi kayak lihat konsep yang memang sudah kebayang dari awal.
+          Disusun untuk membantu pemahaman konsep dasar hingga penerapan pengolahan citra digital secara bertahap.
+          Jadi sebelum masuk ke kode, alur berpikirnya sudah kebayang dulu.
         </p>
+        <div class="hero__actions">
+          <a href="#cakupan" class="btn btn--light">Lihat Cakupan Materi</a>
+          <a href="#materi-3" class="btn btn--ghost">Mulai Belajar</a>
+        </div>
       </div>
     </section>
 
-    <section class="overview section-block">
-      <div class="section-heading">
-        <h2>Garis besar materinya</h2>
+    <section id="cakupan" class="overview section-block">
+      <div class="section-heading section-heading--center">
+        <p class="section-kicker">Peta Pembelajaran</p>
+        <h2>Cakupan Materi</h2>
         <p>
-          Urutannya dibuat runtut. Mulai dari kenalan dulu sama gambar digital, lanjut ke perubahan tampilan gambar,
-          lalu masuk ke cara memperbaiki kualitas gambar, sampai akhirnya lihat contoh pendekatan restorasi yang lebih modern memakai CNN.
+          Urutan materinya dibuat runtut supaya tiap bagian terasa nyambung. Mulai dari citra digital sebagai data,
+          lanjut ke transformasi, peningkatan kualitas, restorasi, sampai segmentasi.
         </p>
       </div>
 
-      <div class="overview-grid overview-grid--2">
+      <div class="overview-grid overview-grid--4">
         <article class="overview-card">
-          <h3>Kenalan dulu sama gambar digital</h3>
-          <p>
-            Bagian awal ini penting banget, karena dari sini mulai kelihatan kalau gambar itu bukan cuma visual, tapi juga data yang bisa dibaca dan diolah.
-          </p>
+          <span class="overview-card__number">03</span>
+          <h3>Format Citra</h3>
+          <p>Kenalan dengan piksel, nilai intensitas, dan model warna.</p>
         </article>
-
         <article class="overview-card">
-          <h3>Lihat bagaimana tampilan gambar bisa berubah</h3>
-          <p>
-            Setelah paham gambar sebagai data, baru lebih enak masuk ke resize, rotate, flip, dan translate.
-          </p>
+          <span class="overview-card__number">04</span>
+          <h3>Transformasi</h3>
+          <p>Memahami cara mengubah ukuran, arah, dan posisi gambar.</p>
         </article>
-
         <article class="overview-card">
-          <h3>Pahami cara bikin gambar lebih jelas</h3>
-          <p>
-            Di sini mulai masuk ke peningkatan citra. Jadi gambar bukan cuma diubah, tapi juga bisa dibuat lebih nyaman buat diamati.
-          </p>
+          <span class="overview-card__number">05</span>
+          <h3>Peningkatan</h3>
+          <p>Melihat cara membuat gambar lebih jelas, halus, atau tegas.</p>
         </article>
-
         <article class="overview-card">
-          <h3>Masuk ke perbaikan gambar</h3>
-          <p>
-            Kalau gambar terganggu noise, berarti yang dibahas bukan sekadar ubah tampilan, tapi mengurangi gangguan supaya hasilnya lebih dekat ke kondisi awal.
-          </p>
+          <span class="overview-card__number">06</span>
+          <h3>Restorasi Statistik</h3>
+          <p>Mengurangi gangguan pada gambar dan membaca hasilnya.</p>
+        </article>
+        <article class="overview-card">
+          <span class="overview-card__number">07</span>
+          <h3>Restorasi CNN</h3>
+          <p>Melihat cara model belajar memperbaiki gambar dari data.</p>
+        </article>
+        <article class="overview-card">
+          <span class="overview-card__number">08</span>
+          <h3>Segmentasi</h3>
+          <p>Memisahkan objek dari background dengan beberapa pendekatan.</p>
         </article>
       </div>
     </section>
 
     <section id="materi-3" class="material section-block">
-      <div class="section-heading">
-        <h2>Format Citra dan Model Warna</h2>
-        <p>
-          Bagian ini jadi fondasi. Kalau bagian ini sudah masuk, materi setelahnya biasanya jauh lebih gampang diikuti.
-          Fokusnya sederhana: gambar digital itu sebenarnya apa, lalu kenapa satu gambar yang sama bisa punya tampilan yang berbeda.
-        </p>
+      <div class="material-header">
+        <span class="material-header__badge">Materi 3</span>
+        <div>
+          <h2>Format Citra dan Model Warna</h2>
+          <p>
+            Bagian ini jadi fondasi. Fokusnya sederhana: gambar digital itu sebenarnya apa,
+            lalu kenapa satu gambar yang sama bisa punya tampilan yang berbeda.
+          </p>
+        </div>
       </div>
 
       <div class="content-grid">
         <div class="content-main">
           <article class="panel">
-            <h3>Mulai dari gambar digital itu sendiri</h3>
+            <h3>Konsep Dasar Citra Digital</h3>
             <p>
-              Saat lihat foto di layar, yang kelihatan memang satu gambar utuh. Tapi di komputer, gambar itu tersusun dari banyak titik kecil yang disebut piksel.
-              Setiap piksel menyimpan nilai. Jadi komputer tidak benar-benar “melihat foto”, tetapi membaca kumpulan data.
+              Saat melihat foto di layar, yang terlihat memang satu gambar utuh. Tapi di komputer, gambar itu tersusun dari banyak titik kecil yang disebut piksel.
+              Setiap piksel menyimpan nilai tertentu, jadi komputer tidak benar-benar “melihat foto”, tetapi membaca kumpulan data.
             </p>
             <p>
-              Misalnya ada ukuran gambar seperti 1200 × 1600 × 3. Dua angka pertama menunjukkan tinggi dan lebar gambar.
-              Angka terakhir menunjukkan jumlah kanal warna. Dari sini mulai kelihatan bahwa gambar itu punya struktur data yang jelas.
-            </p>
-          </article>
-
-          <article class="panel">
-            <h3>Kalau warna gambar dibaca, sebenarnya yang dibaca apa?</h3>
-            <p>
-              Di gambar grayscale, satu piksel biasanya cukup punya satu nilai intensitas. Nilainya umumnya ada di rentang 0 sampai 255.
-              Semakin dekat ke 0, warnanya makin gelap. Semakin dekat ke 255, warnanya makin terang.
-            </p>
-            <p>
-              Kalau gambar berwarna, satu piksel biasanya punya tiga nilai, yaitu R, G, dan B. Masing-masing juga biasanya ada di rentang 0 sampai 255.
-              Jadi satu piksel bisa ditulis seperti (R, G, B). Contohnya, (255, 0, 0) berarti merah kuat, sedangkan (255, 255, 255) berarti putih.
+              Misalnya ada ukuran gambar seperti 1200 × 1600 × 3. Dua angka pertama menunjukkan tinggi dan lebar gambar,
+              sedangkan angka terakhir menunjukkan jumlah kanal warna. Dari sini mulai kelihatan kalau gambar itu punya struktur data yang jelas.
             </p>
           </article>
 
           <article class="panel">
-            <h3>Tiga tampilan yang dipakai di materi ini</h3>
+            <h3>Representasi Nilai Piksel</h3>
+            <p>
+              Di citra grayscale, satu piksel biasanya cukup punya satu nilai intensitas. Nilainya umumnya ada di rentang 0 sampai 255.
+              Semakin dekat ke 0, tampilannya makin gelap. Semakin dekat ke 255, tampilannya makin terang.
+            </p>
+            <p>
+              Kalau gambar berwarna, satu piksel biasanya punya tiga nilai, yaitu R, G, dan B. Jadi satu piksel bisa ditulis seperti (R, G, B).
+              Contohnya, (255, 0, 0) berarti merah kuat, sedangkan (255, 255, 255) berarti putih.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Model Warna</h3>
             <div class="mini-card-grid">
               <div class="mini-card">
                 <h4>RGB</h4>
-                <p>
-                  Ini tampilan yang paling dekat dengan gambar asli. Warna dibentuk dari campuran merah, hijau, dan biru.
-                </p>
+                <p>Model warna yang paling dekat dengan tampilan warna asli. Warna dibentuk dari merah, hijau, dan biru.</p>
               </div>
               <div class="mini-card">
                 <h4>Grayscale</h4>
-                <p>
-                  Di sini warna tidak dipakai. Yang terlihat cuma tingkat terang dan gelap.
-                </p>
+                <p>Hanya memakai tingkat terang dan gelap tanpa informasi warna.</p>
               </div>
               <div class="mini-card">
                 <h4>HSV</h4>
-                <p>
-                  Kalau yang ini, warna dilihat lewat hue, saturation, dan value. Jadi sudut pandangnya beda dari RGB.
-                </p>
+                <p>Melihat warna dari sisi hue, saturation, dan value, jadi sudut pandangnya beda dari RGB.</p>
               </div>
             </div>
           </article>
 
-          <article class="panel">
-            <h3>Biar gampang nangkep</h3>
-            <ul>
-              <li>gambar digital tersusun dari piksel</li>
-              <li>setiap piksel menyimpan nilai</li>
-              <li>grayscale biasanya pakai 1 nilai per piksel</li>
-              <li>RGB biasanya pakai 3 nilai per piksel</li>
-              <li>HSV tetap bicara warna, tapi cara membacanya beda</li>
-              <li>kalau cara merepresentasikan datanya beda, tampilannya juga bisa beda</li>
+          <article class="formula-box">
+            <div class="formula-box__header">
+              <h3>Rumus Dasar</h3>
+              <p>Rumus ini dipakai buat memahami representasi intensitas dan konversi ke grayscale.</p>
+            </div>
+            <div class="formula-item">
+              <div class="formula-item__math">I(x,y) \in [0,255]</div>
+              <p>Nilai intensitas piksel grayscale biasanya ada di rentang 0 sampai 255.</p>
+            </div>
+            <div class="formula-item">
+              <div class="formula-item__math">Y = 0.299R + 0.587G + 0.114B</div>
+              <p>Rumus dasar konversi dari RGB ke grayscale.</p>
+            </div>
+            <div class="symbol-list">
+              <h4>Keterangan Simbol</h4>
+              <ul>
+                <li><strong>I(x,y)</strong> = nilai intensitas piksel pada posisi tertentu</li>
+                <li><strong>Y</strong> = nilai grayscale hasil konversi</li>
+                <li><strong>R, G, B</strong> = kanal merah, hijau, dan biru</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="highlight-box">
+            <h3>Poin Penting</h3>
+            <ul class="check-list">
+              <li>Citra digital tersusun dari piksel.</li>
+              <li>Setiap piksel menyimpan nilai.</li>
+              <li>Grayscale biasanya memakai 1 nilai per piksel.</li>
+              <li>RGB biasanya memakai 3 nilai per piksel.</li>
+              <li>HSV tetap membahas warna, tapi cara membacanya berbeda.</li>
             </ul>
           </article>
 
-          <article class="panel">
-            <h3>Yang perlu diingat</h3>
+          <article class="summary-box summary-box--end">
+            <h3>Inti Materi</h3>
             <p>
-              Inti bagian ini ada di satu ide sederhana: gambar itu data. Karena gambar itu data, tampilannya bisa berubah tergantung cara data itu dibaca.
+              Citra digital pada dasarnya adalah data. Karena citra disimpan sebagai data,
+              maka tampilannya bisa berubah tergantung bagaimana data itu dibaca atau direpresentasikan.
             </p>
           </article>
         </div>
 
         <aside class="content-side">
-          <article class="demo-card" data-demo="color-mode">
+          <article class="demo-card">
             <div class="demo-card__header">
-              <h3>Demo Perbandingan Tampilan</h3>
-              <p>Coba pindah tampilan gambarnya biar bedanya langsung kelihatan.</p>
+              <h3>Demo Visual</h3>
+              <p>Coba pindah tampilan gambar biar bedanya langsung kelihatan.</p>
             </div>
-
             <div class="demo-controls">
               <button class="demo-btn is-active" data-target-mode="rgb">RGB</button>
               <button class="demo-btn" data-target-mode="gray">Grayscale</button>
               <button class="demo-btn" data-target-mode="hsv">HSV</button>
             </div>
-
             <div class="demo-preview demo-preview--image">
-              <img id="demo-color-image" src="assets/images/pcd-sample-rgb.jpg" alt="Contoh citra untuk demo model warna" />
+              <img id="demo-color-image" src="assets/images/pcd-sample-rgb.jpg" alt="Demo model warna" />
             </div>
-
-            <div class="demo-caption" id="demo-color-caption">
-              Mode RGB menampilkan warna gambar seperti yang biasa terlihat pada foto aslinya.
-            </div>
+            <div class="demo-caption" id="demo-color-caption">Mode RGB menampilkan warna gambar seperti yang biasa terlihat pada foto aslinya.</div>
           </article>
         </aside>
       </div>
     </section>
 
     <section id="materi-4" class="material section-block">
-      <div class="section-heading">
-        <h2>Transformasi Citra</h2>
-        <p>
-          Setelah tahu gambar itu data, sekarang masuk ke hal yang langsung kelihatan di mata: tampilan gambar bisa diubah.
-          Yang berubah di sini bukan isi utamanya, tetapi ukuran, arah, atau posisinya.
-        </p>
+      <div class="material-header">
+        <span class="material-header__badge">Materi 4</span>
+        <div>
+          <h2>Transformasi Citra</h2>
+          <p>
+            Setelah tahu gambar itu data, sekarang masuk ke hal yang langsung kelihatan di mata: tampilan gambar bisa diubah.
+            Yang berubah di sini bukan isi utamanya, tetapi ukuran, arah, atau posisinya.
+          </p>
+        </div>
       </div>
 
       <div class="content-grid">
         <div class="content-main">
           <article class="panel">
-            <h3>Sebenarnya transformasi itu apa?</h3>
+            <h3>Konsep Transformasi Citra</h3>
             <p>
-              Transformasi itu cara mengubah tampilan gambar tanpa mengganti objek utama di dalamnya. Jadi gambarnya tetap itu juga,
-              tapi bisa dibuat lebih kecil, diputar, dibalik, atau digeser.
+              Transformasi adalah cara mengubah tampilan gambar tanpa mengganti objek utama di dalamnya.
+              Jadi gambarnya tetap sama, tapi bisa dibuat lebih kecil, diputar, dibalik, atau digeser.
             </p>
           </article>
 
           <article class="panel">
-            <h3>Empat transformasi yang dipakai</h3>
+            <h3>Jenis Transformasi</h3>
             <div class="mini-card-grid">
-              <div class="mini-card">
-                <h4>Resize</h4>
-                <p>Mengubah ukuran gambar, bisa jadi lebih kecil atau lebih besar.</p>
-              </div>
-              <div class="mini-card">
-                <h4>Rotate</h4>
-                <p>Memutar gambar ke arah tertentu. Contoh yang dipakai adalah 90 derajat.</p>
-              </div>
-              <div class="mini-card">
-                <h4>Flip</h4>
-                <p>Membalik gambar. Kalau horizontal, sisi kiri dan kanan seakan bertukar.</p>
-              </div>
-              <div class="mini-card">
-                <h4>Translate</h4>
-                <p>Menggeser posisi gambar ke arah tertentu tanpa mengubah bentuk objek utamanya.</p>
-              </div>
+              <div class="mini-card"><h4>Resize</h4><p>Mengubah ukuran gambar, bisa jadi lebih kecil atau lebih besar.</p></div>
+              <div class="mini-card"><h4>Rotate</h4><p>Memutar gambar ke arah tertentu, misalnya 90 derajat.</p></div>
+              <div class="mini-card"><h4>Flip</h4><p>Membalik gambar secara horizontal atau vertikal.</p></div>
+              <div class="mini-card"><h4>Translate</h4><p>Menggeser posisi gambar tanpa mengubah bentuk objek utamanya.</p></div>
             </div>
           </article>
 
           <article class="panel">
-            <h3>Sedikit sisi teknisnya</h3>
+            <h3>Aspek Teknis</h3>
             <p>
-              Resize berhubungan dengan perubahan dimensi gambar. Rotate berhubungan dengan perubahan orientasi. Flip mengubah susunan kiri-kanan atau atas-bawah.
-              Translate menggeser posisi gambar berdasarkan arah horizontal dan vertikal, atau kalau dibawa santai, geser di sumbu x dan sumbu y.
+              Resize berhubungan dengan perubahan dimensi gambar. Rotate berhubungan dengan perubahan orientasi.
+              Flip mengubah susunan kiri-kanan atau atas-bawah. Translate menggeser posisi gambar pada sumbu horizontal dan vertikal.
             </p>
           </article>
 
-          <article class="panel">
-            <h3>Biar gampang nangkep</h3>
-            <ul>
-              <li>resize = ubah ukuran</li>
-              <li>rotate = ubah arah</li>
-              <li>flip = balik tampilan</li>
-              <li>translate = geser posisi</li>
-              <li>isi gambar tetap sama</li>
-              <li>yang berubah adalah cara gambar ditampilkan</li>
+          <article class="formula-box">
+            <div class="formula-box__header">
+              <h3>Rumus Dasar</h3>
+              <p>Rumus ini menjelaskan perubahan koordinat pada transformasi.</p>
+            </div>
+            <div class="formula-item"><div class="formula-item__math">x' = s_x x, \qquad y' = s_y y</div><p>Rumus scaling atau resize.</p></div>
+            <div class="formula-item"><div class="formula-item__math">x' = x + t_x, \qquad y' = y + t_y</div><p>Rumus translation atau translasi.</p></div>
+            <div class="formula-item"><div class="formula-item__math">[x' \\ y'] = [cos\theta\; -sin\theta;\; sin\theta\; cos\theta][x \\ y]</div><p>Rumus dasar rotasi.</p></div>
+            <div class="formula-item"><div class="formula-item__math">x' = W - 1 - x</div><p>Rumus sederhana untuk flip horizontal.</p></div>
+            <div class="symbol-list">
+              <h4>Keterangan Simbol</h4>
+              <ul>
+                <li><strong>x, y</strong> = koordinat awal</li>
+                <li><strong>x', y'</strong> = koordinat setelah transformasi</li>
+                <li><strong>s_x, s_y</strong> = faktor skala</li>
+                <li><strong>t_x, t_y</strong> = besar translasi</li>
+                <li><strong>θ</strong> = sudut rotasi</li>
+                <li><strong>W</strong> = lebar gambar</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="highlight-box">
+            <h3>Poin Penting</h3>
+            <ul class="check-list">
+              <li>Resize mengubah ukuran gambar.</li>
+              <li>Rotate mengubah arah gambar.</li>
+              <li>Flip membalik tampilan gambar.</li>
+              <li>Translate menggeser posisi gambar.</li>
+              <li>Isi gambar tetap sama, yang berubah adalah cara tampilnya.</li>
             </ul>
           </article>
 
-          <article class="panel">
-            <h3>Yang perlu diingat</h3>
-            <p>
-              Transformasi bukan sekadar nama operasi. Ini adalah cara dasar untuk menyesuaikan tampilan gambar sesuai kebutuhan.
-            </p>
+          <article class="summary-box summary-box--end">
+            <h3>Inti Materi</h3>
+            <p>Transformasi citra bukan tentang mengganti isi gambar, tetapi menyesuaikan tampilan gambar sesuai kebutuhan.</p>
           </article>
         </div>
 
         <aside class="content-side">
-          <article class="demo-card" data-demo="transform">
+          <article class="demo-card">
             <div class="demo-card__header">
-              <h3>Demo Transformasi</h3>
+              <h3>Demo Visual</h3>
               <p>Pilih satu hasil biar perubahan pada gambarnya lebih gampang kebaca.</p>
             </div>
-
             <div class="demo-controls demo-controls--wrap">
               <button class="demo-btn is-active" data-transform="original">Original</button>
               <button class="demo-btn" data-transform="resize">Resize</button>
@@ -260,217 +294,204 @@
               <button class="demo-btn" data-transform="flip">Flip</button>
               <button class="demo-btn" data-transform="translate">Translate</button>
             </div>
-
             <div class="demo-preview demo-preview--image">
-              <img id="demo-transform-image" src="assets/images/transform-original.jpg" alt="Contoh citra untuk demo transformasi" />
+              <img id="demo-transform-image" src="assets/images/transform-original.jpg" alt="Demo transformasi" />
             </div>
-
-            <div class="demo-caption" id="demo-transform-caption">
-              Gambar awal dipakai sebagai pembanding sebelum transformasi dilakukan.
-            </div>
+            <div class="demo-caption" id="demo-transform-caption">Gambar awal dipakai sebagai pembanding sebelum transformasi dilakukan.</div>
           </article>
         </aside>
       </div>
     </section>
 
     <section id="materi-5" class="material section-block">
-      <div class="section-heading">
-        <h2>Peningkatan Citra dalam Domain Spasial dan Frekuensi</h2>
-        <p>
-          Di bagian ini mulai terasa bahwa gambar bukan cuma bisa diubah, tapi juga bisa dibuat lebih enak dilihat.
-          Jadi pertanyaannya sekarang: kalau gambar terasa kurang jelas, apa yang bisa dilakukan?
-        </p>
+      <div class="material-header">
+        <span class="material-header__badge">Materi 5</span>
+        <div>
+          <h2>Peningkatan Citra</h2>
+          <p>
+            Di bagian ini mulai terasa bahwa gambar bukan cuma bisa diubah, tapi juga bisa dibuat lebih enak dilihat.
+            Jadi pertanyaannya sekarang: kalau gambar terasa kurang jelas, apa yang bisa dilakukan?
+          </p>
+        </div>
       </div>
 
       <div class="content-grid">
         <div class="content-main">
           <article class="panel">
-            <h3>Mulai dari domain spasial</h3>
+            <h3>Domain Spasial</h3>
             <p>
-              Domain spasial itu gampangnya berarti kita bekerja langsung pada nilai piksel gambar. Karena langsung menyentuh piksel,
-              efeknya biasanya lebih gampang dibaca dengan mata.
+              Pada domain spasial, pengolahan dilakukan langsung pada nilai piksel. Histogram equalization membantu kontras,
+              Gaussian blur menghaluskan gambar, dan sharpening membuat detail lebih tegas.
             </p>
-            <div class="mini-card-grid">
-              <div class="mini-card">
-                <h4>Histogram Equalization</h4>
-                <p>Membantu bikin kontras lebih terasa karena persebaran intensitasnya jadi lebih merata.</p>
-              </div>
-              <div class="mini-card">
-                <h4>Gaussian Blur</h4>
-                <p>Membuat gambar terasa lebih halus karena detail-detail kecil ikut dilembutkan.</p>
-              </div>
-              <div class="mini-card">
-                <h4>Sharpening</h4>
-                <p>Membuat tepi dan detail gambar terasa lebih tegas.</p>
-              </div>
+          </article>
+
+          <article class="panel">
+            <h3>Domain Frekuensi</h3>
+            <p>
+              Pada domain frekuensi, gambar dilihat dari komponen halus dan komponen detailnya.
+              Low-pass filter cenderung mempertahankan komponen frekuensi rendah, sehingga hasil gambar terasa lebih lembut.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Aspek Teknis</h3>
+            <p>
+              Histogram bisa dipahami sebagai sebaran intensitas piksel. Kernel adalah pola kecil yang dipakai untuk memproses area sekitar piksel.
+              Blur dan sharpen umumnya bekerja dengan melihat piksel di sekitar, bukan hanya satu piksel tunggal.
+            </p>
+          </article>
+
+          <article class="formula-box">
+            <div class="formula-box__header">
+              <h3>Rumus Dasar</h3>
+              <p>Rumus ini mewakili operasi dasar pada peningkatan citra.</p>
+            </div>
+            <div class="formula-item"><div class="formula-item__math">g(x,y) = T(f(x,y))</div><p>Transformasi intensitas umum.</p></div>
+            <div class="formula-item"><div class="formula-item__math">g(x,y) = ΣΣ h(i,j) f(x-i,y-j)</div><p>Rumus dasar filtering atau konvolusi.</p></div>
+            <div class="formula-item"><div class="formula-item__math">p(r_k)= n_k / n</div><p>Probabilitas intensitas pada histogram.</p></div>
+            <div class="formula-item"><div class="formula-item__math">F(u,v)=ΣΣ f(x,y)e^{-j2π((ux/M)+(vy/N))}</div><p>Rumus dasar representasi frekuensi.</p></div>
+            <div class="symbol-list">
+              <h4>Keterangan Simbol</h4>
+              <ul>
+                <li><strong>f(x,y)</strong> = citra awal</li>
+                <li><strong>g(x,y)</strong> = citra hasil</li>
+                <li><strong>T</strong> = fungsi transformasi intensitas</li>
+                <li><strong>h(i,j)</strong> = kernel atau filter</li>
+                <li><strong>p(r_k)</strong> = probabilitas intensitas ke-k</li>
+                <li><strong>n_k</strong> = jumlah piksel dengan intensitas tertentu</li>
+              </ul>
             </div>
           </article>
 
-          <article class="panel">
-            <h3>Masuk sedikit ke bagian teknisnya</h3>
-            <p>
-              Histogram bisa dibayangin sebagai sebaran intensitas piksel pada gambar. Kalau sebarannya kurang bagus, gambar bisa terasa datar.
-              Equalization membantu memperbaiki sebaran itu. Blur dan sharpen biasanya bekerja dengan melihat piksel di sekitar, bukan piksel tunggal saja.
-              Di situ biasanya muncul ide tentang kernel, yaitu pola kecil yang dipakai untuk memproses area sekitar piksel.
-            </p>
-          </article>
-
-          <article class="panel">
-            <h3>Lalu kenalan sama domain frekuensi</h3>
-            <p>
-              Kalau domain spasial langsung menyentuh piksel, domain frekuensi melihat gambar dari sisi komponen halus dan komponen detailnya.
-              Secara sederhana, frekuensi rendah berkaitan dengan bagian yang halus, sedangkan frekuensi tinggi berkaitan dengan detail dan tepi.
-            </p>
-            <p>
-              Untuk masuk ke cara pandang ini, dipakai FFT. Setelah itu, low-pass filter dipakai untuk lebih mempertahankan komponen halus.
-              Makanya hasilnya cenderung terasa lebih lembut.
-            </p>
-          </article>
-
-          <article class="panel">
-            <h3>Biar gampang nangkep</h3>
-            <ul>
-              <li>domain spasial = kerja langsung di piksel</li>
-              <li>histogram equalization = bantu kontras</li>
-              <li>blur = bikin gambar lebih halus</li>
-              <li>sharpen = bikin detail lebih tegas</li>
-              <li>domain frekuensi = lihat gambar dari sisi komponen halus dan detail</li>
-              <li>low-pass = cenderung mempertahankan bagian halus</li>
+          <article class="highlight-box">
+            <h3>Poin Penting</h3>
+            <ul class="check-list">
+              <li>Domain spasial bekerja langsung pada piksel.</li>
+              <li>Equalization membantu kontras.</li>
+              <li>Blur menghaluskan gambar.</li>
+              <li>Sharpen mempertegas detail.</li>
+              <li>Domain frekuensi melihat gambar dari sisi komponen halus dan detail.</li>
+              <li>Low-pass cenderung mempertahankan bagian halus.</li>
             </ul>
           </article>
 
-          <article class="panel">
-            <h3>Yang perlu diingat</h3>
-            <p>
-              Satu gambar bisa diperbaiki tampilannya lewat lebih dari satu cara. Jalurnya beda, tapi tujuannya sama: bikin gambar lebih mudah diamati.
-            </p>
+          <article class="summary-box summary-box--end">
+            <h3>Inti Materi</h3>
+            <p>Satu gambar bisa diperbaiki tampilannya lewat lebih dari satu cara, baik dengan bekerja langsung pada piksel maupun lewat domain frekuensi.</p>
           </article>
         </div>
 
         <aside class="content-side">
-          <article class="demo-card" data-demo="enhancement-spatial">
+          <article class="demo-card">
             <div class="demo-card__header">
-              <h3>Demo Domain Spasial</h3>
+              <h3>Demo Visual</h3>
               <p>Bandingkan hasil tiap proses biar perubahan gambarnya lebih kebayang.</p>
             </div>
-
             <div class="demo-controls demo-controls--wrap">
               <button class="demo-btn is-active" data-enhance="original">Original</button>
               <button class="demo-btn" data-enhance="equalized">Equalized</button>
               <button class="demo-btn" data-enhance="blur">Blur</button>
               <button class="demo-btn" data-enhance="sharpen">Sharpen</button>
             </div>
-
             <div class="demo-preview demo-preview--image">
-              <img id="demo-enhance-image" src="assets/images/enhance-original.jpg" alt="Contoh citra untuk demo peningkatan domain spasial" />
+              <img id="demo-enhance-image" src="assets/images/enhance-original.jpg" alt="Demo peningkatan citra" />
             </div>
-
-            <div class="demo-caption" id="demo-enhance-caption">
-              Ini adalah tampilan awal gambar sebelum proses peningkatan dilakukan.
-            </div>
-          </article>
-
-          <article class="summary-box">
-            <h3>Gagasan sederhananya</h3>
-            <p>
-              Domain spasial langsung menyentuh piksel. Domain frekuensi melihat gambar dari sisi komponen halus dan detailnya.
-              Cara pandangnya beda, tapi sama-sama dipakai buat membantu gambar jadi lebih mudah dibaca.
-            </p>
+            <div class="demo-caption" id="demo-enhance-caption">Ini adalah tampilan awal gambar sebelum proses peningkatan dilakukan.</div>
           </article>
         </aside>
       </div>
     </section>
 
     <section id="materi-6" class="material section-block">
-      <div class="section-heading">
-        <h2>Restorasi Citra Statistik</h2>
-        <p>
-          Kalau tadi fokusnya membuat gambar lebih jelas, sekarang fokusnya bergeser sedikit: gimana kalau gambar itu sudah terganggu noise?
-          Nah, di sinilah mulai masuk ke ide restorasi.
-        </p>
+      <div class="material-header">
+        <span class="material-header__badge">Materi 6</span>
+        <div>
+          <h2>Restorasi Citra Statistik</h2>
+          <p>
+            Kalau tadi fokusnya membuat gambar lebih jelas, sekarang fokusnya bergeser sedikit: gimana kalau gambar itu sudah terganggu noise?
+            Nah, di sinilah mulai masuk ke ide restorasi.
+          </p>
+        </div>
       </div>
 
       <div class="content-grid">
         <div class="content-main">
           <article class="panel">
-            <h3>Masalahnya ada di noise</h3>
+            <h3>Noise pada Citra</h3>
             <p>
-              Noise itu gangguan pada gambar. Di bagian ini yang dipakai adalah salt-and-pepper noise, yaitu bintik-bintik hitam dan putih yang muncul acak di gambar.
-              Kalau gangguannya cukup banyak, detail penting jadi susah kelihatan.
+              Noise adalah gangguan yang muncul pada gambar. Di bagian ini yang dipakai adalah salt-and-pepper noise,
+              yaitu bintik-bintik hitam dan putih yang muncul acak di gambar.
             </p>
           </article>
 
           <article class="panel">
-            <h3>Kenapa median filter dipakai?</h3>
+            <h3>Median Filter</h3>
             <p>
-              Karena median filter cukup cocok buat noise jenis ini. Gampangnya, filter ini melihat nilai piksel di sekitar lalu mengambil nilai tengah, bukan rata-rata.
-              Itu bikin nilai yang terlalu ekstrem lebih gampang ditekan.
+              Median filter dipakai untuk mengurangi noise, terutama salt-and-pepper noise.
+              Cara kerjanya adalah melihat piksel di sekitar lalu mengambil nilai tengah, bukan rata-rata.
             </p>
-            <div class="mini-card-grid">
-              <div class="mini-card">
-                <h4>Noisy Image</h4>
-                <p>Gambar yang sudah kena gangguan, jadi tampilannya terlihat kotor.</p>
-              </div>
-              <div class="mini-card">
-                <h4>Median Filter</h4>
-                <p>Dipakai untuk mengurangi noise tanpa terlalu merusak bentuk utama gambar.</p>
-              </div>
-              <div class="mini-card">
-                <h4>Evaluasi</h4>
-                <p>Hasilnya bukan cuma dilihat dengan mata, tapi juga diukur dengan angka.</p>
-              </div>
+          </article>
+
+          <article class="panel">
+            <h3>Evaluasi Hasil</h3>
+            <p>
+              Setelah hasil restorasi keluar, kualitasnya bisa dilihat secara visual dan juga secara numerik dengan MSE dan PSNR.
+              MSE menunjukkan seberapa jauh hasil restorasi dari gambar asli, sedangkan PSNR menunjukkan kualitas hasil restorasinya.
+            </p>
+          </article>
+
+          <article class="formula-box">
+            <div class="formula-box__header">
+              <h3>Rumus Dasar</h3>
+              <p>Rumus ini dipakai buat memahami proses restorasi dan evaluasinya.</p>
+            </div>
+            <div class="formula-item"><div class="formula-item__math">g(x,y)= median{f(s,t)}</div><p>Rumus dasar median filter.</p></div>
+            <div class="formula-item"><div class="formula-item__math">MSE = (1/MN) ΣΣ [I(x,y)-K(x,y)]²</div><p>Rumus mean squared error.</p></div>
+            <div class="formula-item"><div class="formula-item__math">PSNR = 10 log10(MAX² / MSE)</div><p>Rumus peak signal-to-noise ratio.</p></div>
+            <div class="symbol-list">
+              <h4>Keterangan Simbol</h4>
+              <ul>
+                <li><strong>g(x,y)</strong> = piksel hasil</li>
+                <li><strong>I(x,y)</strong> = gambar asli</li>
+                <li><strong>K(x,y)</strong> = gambar hasil restorasi</li>
+                <li><strong>M, N</strong> = ukuran gambar</li>
+                <li><strong>MAX</strong> = nilai piksel maksimum, biasanya 255</li>
+              </ul>
             </div>
           </article>
 
-          <article class="panel">
-            <h3>Masuk sedikit ke ukuran hasilnya</h3>
-            <p>
-              Setelah hasil restorasi keluar, ada dua angka yang sering dipakai buat melihat kualitasnya.
-              MSE membantu melihat seberapa jauh hasil restorasi dari gambar asli. Kalau nilainya kecil, berarti hasilnya makin dekat.
-              PSNR membantu melihat kualitas hasil restorasi. Kalau nilainya besar, biasanya kualitasnya juga makin baik.
-            </p>
-          </article>
-
-          <article class="panel">
-            <h3>Biar gampang nangkep</h3>
-            <ul>
-              <li>noise bikin gambar kelihatan kotor</li>
-              <li>salt-and-pepper = bintik hitam putih acak</li>
-              <li>median filter dipakai buat ngurangin gangguan itu</li>
-              <li>median beda dari mean karena yang diambil nilai tengah, bukan rata-rata</li>
-              <li>hasil restorasi bisa dilihat dengan mata</li>
-              <li>hasilnya juga bisa dicek pakai MSE dan PSNR</li>
+          <article class="highlight-box">
+            <h3>Poin Penting</h3>
+            <ul class="check-list">
+              <li>Noise membuat gambar terlihat kotor.</li>
+              <li>Salt-and-pepper noise muncul sebagai bintik hitam putih acak.</li>
+              <li>Median filter dipakai untuk mengurangi gangguan itu.</li>
+              <li>Median berbeda dari mean karena yang diambil nilai tengah.</li>
+              <li>Hasil restorasi bisa dilihat secara visual dan juga dinilai dengan angka.</li>
             </ul>
           </article>
 
-          <article class="panel">
-            <h3>Yang perlu diingat</h3>
-            <p>
-              Restorasi itu fokusnya bukan bikin gambar jadi cantik, tapi mengurangi gangguan supaya hasilnya lebih dekat ke kondisi awal.
-            </p>
+          <article class="summary-box summary-box--end">
+            <h3>Inti Materi</h3>
+            <p>Restorasi citra fokus pada mengurangi gangguan supaya gambar lebih dekat ke kondisi awal, bukan sekadar membuat tampilannya lebih menarik.</p>
           </article>
         </div>
 
         <aside class="content-side">
-          <article class="demo-card" data-demo="restoration-statistic">
+          <article class="demo-card">
             <div class="demo-card__header">
-              <h3>Demo Restorasi</h3>
-              <p>Bandingkan gambar asli, gambar yang terganggu, dan hasil perbaikannya.</p>
+              <h3>Demo Visual</h3>
+              <p>Bandingkan gambar asli, noisy, dan hasil restorasi.</p>
             </div>
-
             <div class="demo-controls demo-controls--wrap">
               <button class="demo-btn is-active" data-restore="original">Original</button>
               <button class="demo-btn" data-restore="noisy">Noisy</button>
               <button class="demo-btn" data-restore="restored">Restored</button>
             </div>
-
             <div class="demo-preview demo-preview--image">
-              <img id="demo-restoration-image" src="assets/images/restoration-original.jpg" alt="Contoh citra untuk demo restorasi statistik" />
+              <img id="demo-restoration-image" src="assets/images/restoration-original.jpg" alt="Demo restorasi statistik" />
             </div>
-
-            <div class="demo-caption" id="demo-restoration-caption">
-              Gambar asli dipakai sebagai acuan utama sebelum noise ditambahkan.
-            </div>
+            <div class="demo-caption" id="demo-restoration-caption">Gambar asli dipakai sebagai acuan utama buat melihat hasil perbaikannya nanti.</div>
           </article>
 
           <article class="metric-panel">
@@ -493,18 +514,21 @@
     </section>
 
     <section id="materi-7" class="material section-block">
-      <div class="section-heading">
-        <h2>Restorasi Citra Berbasis CNN</h2>
-        <p>
-          Di bagian ini mulai kelihatan kalau memperbaiki gambar tidak selalu harus pakai aturan yang ditentukan manual.
-          Ada juga pendekatan yang membuat model belajar dari data. Salah satu contohnya adalah CNN.
-        </p>
+      <div class="material-header">
+        <span class="material-header__badge">Materi 7</span>
+        <div>
+          <h2>Restorasi Citra Berbasis CNN</h2>
+          <p>
+            Di bagian ini mulai kelihatan kalau memperbaiki gambar tidak selalu harus pakai aturan yang ditentukan manual.
+            Ada juga pendekatan yang membuat model belajar dari data, salah satu contohnya adalah CNN.
+          </p>
+        </div>
       </div>
 
       <div class="content-grid content-grid--wide">
         <div class="content-main">
           <article class="panel">
-            <h3>Mulai dari idenya dulu</h3>
+            <h3>Konsep Dasar CNN</h3>
             <p>
               Kalau di materi sebelumnya gambar diperbaiki dengan aturan yang sudah jelas, di sini gambar diperbaiki dengan model yang belajar dari contoh data.
               Jadi cara berpikirnya memang beda dari metode klasik.
@@ -512,71 +536,210 @@
           </article>
 
           <article class="panel">
-            <h3>Sedikit sisi teknisnya</h3>
+            <h3>Aspek Teknis</h3>
             <p>
-              Di sini ada dataset, ada gambar asli, lalu gambar itu sengaja dibuat noisy. Setelah itu gambar noisy masuk ke model CNN.
-              Model ini belajar dari banyak contoh supaya bisa menghasilkan gambar yang lebih bersih. CNN cocok buat citra karena punya layer konvolusi
-              yang membantu menangkap pola visual pada gambar.
-            </p>
-            <p>
-              Contoh yang dipakai adalah MNIST. Ini enak buat pengantar karena gambarnya sederhana dan ukurannya kecil, jadi fokusnya tetap di ide restorasinya.
+              Gambar noisy menjadi input ke model. CNN belajar dari data supaya hasil akhirnya lebih dekat ke gambar asli.
+              Layer konvolusi membantu model menangkap pola visual pada gambar. Dataset yang dipakai bisa berupa MNIST karena gambarnya sederhana dan cocok untuk pengantar.
             </p>
           </article>
 
-          <article class="panel">
-            <h3>Biar gampang nangkep</h3>
-            <ul>
-              <li>mulai dari gambar asli</li>
-              <li>gambar dibuat noisy</li>
-              <li>gambar noisy masuk ke model</li>
-              <li>model belajar dari contoh</li>
-              <li>hasil keluar lebih bersih</li>
-              <li>cara berpikirnya beda dari filter biasa</li>
+          <article class="formula-box">
+            <div class="formula-box__header">
+              <h3>Rumus Dasar</h3>
+              <p>Rumus ini cukup buat memahami gambaran teknis CNN secara ringan.</p>
+            </div>
+            <div class="formula-item"><div class="formula-item__math">g(x,y) = ΣΣ h(i,j) f(x-i,y-j)</div><p>Rumus dasar konvolusi.</p></div>
+            <div class="formula-item"><div class="formula-item__math">ReLU(x) = max(0,x)</div><p>Fungsi aktivasi ReLU.</p></div>
+            <div class="formula-item"><div class="formula-item__math">L = (1/N) Σ (y_i - ŷ_i)²</div><p>Contoh loss MSE untuk denoising.</p></div>
+            <div class="symbol-list">
+              <h4>Keterangan Simbol</h4>
+              <ul>
+                <li><strong>h(i,j)</strong> = kernel</li>
+                <li><strong>f(x,y)</strong> = citra masukan</li>
+                <li><strong>g(x,y)</strong> = hasil konvolusi</li>
+                <li><strong>yᵢ</strong> = target asli</li>
+                <li><strong>ŷᵢ</strong> = hasil prediksi model</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="highlight-box">
+            <h3>Poin Penting</h3>
+            <ul class="check-list">
+              <li>Mulai dari gambar asli.</li>
+              <li>Gambar dibuat noisy.</li>
+              <li>Gambar noisy masuk ke model.</li>
+              <li>Model belajar dari contoh data.</li>
+              <li>Hasil keluar lebih bersih.</li>
+              <li>Cara berpikirnya berbeda dari filter biasa.</li>
             </ul>
           </article>
 
-          <article class="panel">
-            <h3>Yang perlu diingat</h3>
-            <p>
-              CNN dikenalkan supaya kelihatan kalau perbaikan gambar juga bisa dilakukan lewat model yang belajar dari data, bukan cuma aturan manual.
-            </p>
+          <article class="summary-box summary-box--end">
+            <h3>Inti Materi</h3>
+            <p>CNN dikenalkan untuk menunjukkan bahwa restorasi citra juga punya pendekatan modern yang belajar dari data, bukan cuma aturan manual.</p>
           </article>
         </div>
 
         <aside class="content-side">
           <article class="demo-card demo-card--cnn">
             <div class="demo-card__header">
-              <h3>Alur Denoising</h3>
-              <p>Lihat jalur sederhananya dari gambar awal sampai hasil restorasi.</p>
+              <h3>Demo Visual</h3>
+              <p>Lihat alur sederhananya dari gambar awal sampai hasil restorasi.</p>
             </div>
-
             <div class="flow-steps">
-              <div class="flow-step">
-                <span>1</span>
-                <p>Original</p>
-              </div>
+              <div class="flow-step"><span>1</span><p>Original</p></div>
               <div class="flow-arrow">→</div>
-              <div class="flow-step">
-                <span>2</span>
-                <p>Noisy</p>
-              </div>
+              <div class="flow-step"><span>2</span><p>Noisy</p></div>
               <div class="flow-arrow">→</div>
-              <div class="flow-step">
-                <span>3</span>
-                <p>CNN</p>
-              </div>
+              <div class="flow-step"><span>3</span><p>CNN</p></div>
               <div class="flow-arrow">→</div>
-              <div class="flow-step">
-                <span>4</span>
-                <p>Restored</p>
-              </div>
+              <div class="flow-step"><span>4</span><p>Restored</p></div>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section id="materi-8" class="material section-block">
+      <div class="material-header">
+        <span class="material-header__badge">Materi 8</span>
+        <div>
+          <h2>Segmentasi Citra</h2>
+          <p>
+            Setelah gambar cukup jelas atau sudah diperbaiki, langkah berikutnya adalah memisahkan bagian penting dari gambar.
+            Di sinilah segmentasi mulai dibahas.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-grid content-grid--wide">
+        <div class="content-main">
+          <article class="panel">
+            <h3>Konsep Segmentasi Citra</h3>
+            <p>
+              Segmentasi adalah proses membagi citra menjadi bagian-bagian yang bermakna. Tujuannya adalah menemukan objek, batas objek,
+              atau area tertentu yang ingin dianalisis lebih lanjut. Jadi fokusnya bukan lagi sekadar memperjelas gambar,
+              tetapi memisahkan mana objek dan mana background.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Thresholding</h3>
+            <p>
+              Thresholding memisahkan foreground dan background berdasarkan intensitas piksel.
+              Global thresholding memakai satu threshold untuk seluruh gambar, adaptive thresholding memakai threshold lokal per area kecil,
+              sedangkan Otsu mencari threshold optimal secara otomatis.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Segmentasi Berbasis Tepi</h3>
+            <p>
+              Segmentasi berbasis tepi fokus pada batas objek. Sobel menghitung gradien intensitas,
+              sedangkan Canny memakai tahapan yang lebih lengkap supaya hasil tepinya lebih rapi dan selektif.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Segmentasi Berbasis Wilayah</h3>
+            <p>
+              Pendekatan ini melihat objek sebagai area yang homogen. Prosesnya dimulai dari seed point,
+              lalu area diperluas ke piksel tetangga selama masih memenuhi syarat yang ditentukan.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Segmentasi Berbasis Clustering dan Deep Learning</h3>
+            <p>
+              Pada clustering-based segmentation, piksel dikelompokkan berdasarkan kemiripan atau kedekatan. Salah satu contoh yang dipakai adalah DBSCAN.
+              Untuk pendekatan deep learning, contoh yang diperkenalkan adalah U-Net yang memakai encoder dan decoder untuk menghasilkan mask segmentasi.
+            </p>
+          </article>
+
+          <article class="formula-box">
+            <div class="formula-box__header">
+              <h3>Rumus Dasar</h3>
+              <p>Rumus ini membantu memahami beberapa pendekatan segmentasi dasar.</p>
+            </div>
+            <div class="formula-item"><div class="formula-item__math">g(x,y)= { 1, f(x,y) ≥ T ; 0, f(x,y) &lt; T }</div><p>Rumus thresholding biner.</p></div>
+            <div class="formula-item"><div class="formula-item__math">σ_b² = ω₀ω₁(μ₀ - μ₁)²</div><p>Rumus dasar Otsu.</p></div>
+            <div class="formula-item"><div class="formula-item__math">G = √(G_x² + G_y²)</div><p>Rumus gradien pada Sobel.</p></div>
+            <div class="formula-item"><div class="formula-item__math">|I(p) - μ_R| &lt; T</div><p>Kriteria sederhana pada region growing.</p></div>
+            <div class="formula-item"><div class="formula-item__math">|N_ε(p)| ≥ MinPts</div><p>Kriteria dasar pada DBSCAN.</p></div>
+            <div class="symbol-list">
+              <h4>Keterangan Simbol</h4>
+              <ul>
+                <li><strong>T</strong> = threshold</li>
+                <li><strong>ω₀, ω₁</strong> = proporsi background dan foreground</li>
+                <li><strong>μ₀, μ₁</strong> = rata-rata intensitas masing-masing kelas</li>
+                <li><strong>Gx, Gy</strong> = gradien arah horizontal dan vertikal</li>
+                <li><strong>μR</strong> = rata-rata intensitas region</li>
+                <li><strong>MinPts</strong> = jumlah minimum titik pada DBSCAN</li>
+              </ul>
             </div>
           </article>
 
-          <article class="summary-box">
-            <h3>Bedanya dengan metode sebelumnya</h3>
+          <article class="highlight-box">
+            <h3>Poin Penting</h3>
+            <ul class="check-list">
+              <li>Segmentasi dipakai untuk memisahkan bagian penting dari gambar.</li>
+              <li>Thresholding cocok untuk pemisahan berdasarkan intensitas.</li>
+              <li>Sobel dan Canny fokus pada batas objek.</li>
+              <li>Region growing memperluas area dari seed point.</li>
+              <li>DBSCAN mengelompokkan piksel berdasarkan kedekatan.</li>
+              <li>U-Net dipakai untuk segmentasi berbasis deep learning.</li>
+            </ul>
+          </article>
+
+          <article class="summary-box summary-box--end">
+            <h3>Inti Materi</h3>
             <p>
-              Kalau median filter pakai aturan yang sudah jelas, CNN belajar dari data. Tujuannya sama-sama memperbaiki gambar, tapi cara kerjanya beda.
+              Segmentasi fokus pada memisahkan bagian penting dari gambar. Jadi setelah gambar cukup jelas,
+              tahap berikutnya adalah menentukan mana objek, mana latar, atau mana area yang memang perlu dipisahkan untuk proses lanjutan.
+            </p>
+          </article>
+        </div>
+
+        <aside class="content-side">
+          <article class="demo-card">
+            <div class="demo-card__header">
+              <h3>Demo Thresholding</h3>
+              <p>Bandingkan hasil thresholding dari beberapa pendekatan.</p>
+            </div>
+            <div class="demo-controls demo-controls--wrap">
+              <button class="demo-btn is-active" data-seg-threshold="original">Original</button>
+              <button class="demo-btn" data-seg-threshold="global">Global</button>
+              <button class="demo-btn" data-seg-threshold="adaptive">Adaptive</button>
+              <button class="demo-btn" data-seg-threshold="otsu">Otsu</button>
+            </div>
+            <div class="demo-preview demo-preview--image">
+              <img id="demo-seg-threshold-image" src="assets/images/seg-threshold-original.jpg" alt="Demo thresholding" />
+            </div>
+            <div class="demo-caption" id="demo-seg-threshold-caption">Gambar awal dipakai sebagai pembanding sebelum thresholding dilakukan.</div>
+          </article>
+
+          <article class="demo-card">
+            <div class="demo-card__header">
+              <h3>Demo Segmentasi Berbasis Tepi</h3>
+              <p>Lihat perbedaan hasil Sobel dan Canny.</p>
+            </div>
+            <div class="demo-controls demo-controls--wrap">
+              <button class="demo-btn is-active" data-seg-edge="original">Original</button>
+              <button class="demo-btn" data-seg-edge="sobel">Sobel</button>
+              <button class="demo-btn" data-seg-edge="canny">Canny</button>
+            </div>
+            <div class="demo-preview demo-preview--image">
+              <img id="demo-seg-edge-image" src="assets/images/seg-edge-original.jpg" alt="Demo segmentasi tepi" />
+            </div>
+            <div class="demo-caption" id="demo-seg-edge-caption">Gambar awal dipakai sebagai pembanding sebelum deteksi tepi dilakukan.</div>
+          </article>
+
+          <article class="summary-box">
+            <h3>Visual Segmentasi Lanjutan</h3>
+            <p>
+              Region growing, DBSCAN, dan U-Net lebih enak ditampilkan sebagai visual contoh hasil.
+              Bagian ini tidak perlu dibuat terlalu interaktif supaya fokus materinya tetap terjaga.
             </p>
           </article>
         </aside>
@@ -584,16 +747,17 @@
     </section>
 
     <section id="referensi" class="reference section-block">
-      <div class="section-heading">
-        <h2>Referensi dan catatan akhir</h2>
-        <p>
-          Bagian ini bisa dipakai buat menaruh sumber, tools, atau catatan tambahan kalau nanti mau ngulang materi lagi.
-        </p>
+      <div class="material-header">
+        <span class="material-header__badge">Penutup</span>
+        <div>
+          <h2>Referensi</h2>
+          <p>Bagian ini dipakai untuk menaruh perangkat yang dipakai dan catatan akhir singkat.</p>
+        </div>
       </div>
 
       <div class="reference-grid">
         <article class="panel">
-          <h3>Tools yang dipakai</h3>
+          <h3>Perangkat yang Digunakan</h3>
           <ul>
             <li>OpenCV</li>
             <li>NumPy</li>
@@ -603,9 +767,10 @@
         </article>
 
         <article class="panel">
-          <h3>Penutup singkat</h3>
+          <h3>Catatan Akhir</h3>
           <p>
-            Harapannya, setelah lihat web ini, pas masuk ke notebook atau kode, alurnya sudah lebih kebayang dan nggak terasa mendadak.
+            Harapannya, setelah melihat media ini, alur materi praktikum sudah lebih kebayang.
+            Jadi waktu masuk ke notebook atau kode, langkah-langkahnya nggak terasa mendadak.
           </p>
         </article>
       </div>

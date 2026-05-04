@@ -96,13 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
       gray: {
         src: 'assets/images/pcd-sample-gray.jpg',
         alt: 'Contoh citra dalam mode grayscale',
-        caption: 'Mode grayscale menghilangkan warna dan menyisakan terang serta gelap.',
+        caption: 'Mode grayscale menghilangkan informasi warna dan hanya menyisakan terang serta gelap.',
         fallbackLabel: 'pcd-sample-gray.jpg',
       },
       hsv: {
         src: 'assets/images/pcd-sample-hsv.jpg',
         alt: 'Contoh citra dalam mode HSV',
-        caption: 'Mode HSV melihat warna dari sisi hue, saturation, dan value, jadi tampilannya terasa beda dari RGB.',
+        caption: 'Mode HSV membantu melihat warna dari sisi hue, saturation, dan value, jadi tampilannya terasa berbeda dari RGB.',
         fallbackLabel: 'pcd-sample-hsv.jpg',
       },
     },
@@ -162,19 +162,19 @@ document.addEventListener('DOMContentLoaded', () => {
       equalized: {
         src: 'assets/images/enhance-equalized.jpg',
         alt: 'Hasil histogram equalization pada citra',
-        caption: 'Histogram equalization membantu bikin kontras gambar terasa lebih jelas.',
+        caption: 'Histogram equalization membantu membuat persebaran intensitas lebih merata, sehingga bagian gambar bisa terlihat lebih jelas.',
         fallbackLabel: 'enhance-equalized.jpg',
       },
       blur: {
         src: 'assets/images/enhance-blur.jpg',
         alt: 'Hasil Gaussian blur pada citra',
-        caption: 'Gaussian blur bikin gambar terasa lebih halus karena detail-detail kecil ikut dilembutkan.',
+        caption: 'Gaussian blur membuat gambar terasa lebih halus karena detail-detail kecil dan gangguan tertentu ikut dilembutkan.',
         fallbackLabel: 'enhance-blur.jpg',
       },
       sharpen: {
         src: 'assets/images/enhance-sharpen.jpg',
         alt: 'Hasil sharpening pada citra',
-        caption: 'Sharpening bikin tepi dan detail gambar terasa lebih tegas.',
+        caption: 'Sharpening menonjolkan tepi dan detail supaya gambar terlihat lebih tegas.',
         fallbackLabel: 'enhance-sharpen.jpg',
       },
     },
@@ -189,20 +189,80 @@ document.addEventListener('DOMContentLoaded', () => {
       original: {
         src: 'assets/images/restoration-original.jpg',
         alt: 'Citra asli sebelum restorasi',
-        caption: 'Gambar asli dipakai sebagai acuan utama buat melihat hasil perbaikannya nanti.',
+        caption: 'Gambar asli dipakai sebagai patokan utama untuk melihat seberapa dekat hasil restorasi dengan kondisi awal.',
         fallbackLabel: 'restoration-original.jpg',
       },
       noisy: {
         src: 'assets/images/restoration-noisy.jpg',
         alt: 'Citra setelah ditambahkan salt and pepper noise',
-        caption: 'Salt-and-pepper noise terlihat seperti bintik-bintik hitam putih yang mengganggu gambar.',
+        caption: 'Salt-and-pepper noise terlihat seperti bintik-bintik hitam dan putih yang mengganggu tampilan gambar.',
         fallbackLabel: 'restoration-noisy.jpg',
       },
       restored: {
         src: 'assets/images/restoration-restored.jpg',
         alt: 'Citra setelah diproses median filter',
-        caption: 'Setelah median filter dipakai, gangguan noise berkurang dan bentuk utama gambar jadi lebih jelas.',
+        caption: 'Setelah median filter diterapkan, gangguan noise berkurang dan bentuk utama gambar bisa terlihat lebih bersih.',
         fallbackLabel: 'restoration-restored.jpg',
+      },
+    },
+  });
+
+  setupSingleImageDemo({
+    buttonSelector: '[data-seg-threshold]',
+    imageSelector: '#demo-seg-threshold-image',
+    captionSelector: '#demo-seg-threshold-caption',
+    dataAttribute: 'segThreshold',
+    config: {
+      original: {
+        src: 'assets/images/seg-threshold-original.jpg',
+        alt: 'Citra asli untuk demo thresholding',
+        caption: 'Gambar awal dipakai sebagai pembanding sebelum thresholding dilakukan.',
+        fallbackLabel: 'seg-threshold-original.jpg',
+      },
+      global: {
+        src: 'assets/images/seg-threshold-global.jpg',
+        alt: 'Hasil global thresholding',
+        caption: 'Global thresholding memakai satu threshold untuk seluruh gambar. Cocok kalau perbedaan foreground dan background cukup jelas.',
+        fallbackLabel: 'seg-threshold-global.jpg',
+      },
+      adaptive: {
+        src: 'assets/images/seg-threshold-adaptive.jpg',
+        alt: 'Hasil adaptive thresholding',
+        caption: 'Adaptive thresholding menghitung threshold per area kecil, jadi lebih fleksibel untuk pencahayaan yang tidak merata.',
+        fallbackLabel: 'seg-threshold-adaptive.jpg',
+      },
+      otsu: {
+        src: 'assets/images/seg-threshold-otsu.jpg',
+        alt: 'Hasil Otsu thresholding',
+        caption: 'Otsu thresholding mencari threshold optimal secara otomatis untuk memisahkan foreground dan background.',
+        fallbackLabel: 'seg-threshold-otsu.jpg',
+      },
+    },
+  });
+
+  setupSingleImageDemo({
+    buttonSelector: '[data-seg-edge]',
+    imageSelector: '#demo-seg-edge-image',
+    captionSelector: '#demo-seg-edge-caption',
+    dataAttribute: 'segEdge',
+    config: {
+      original: {
+        src: 'assets/images/seg-edge-original.jpg',
+        alt: 'Citra asli untuk demo segmentasi tepi',
+        caption: 'Gambar awal dipakai sebagai pembanding sebelum deteksi tepi dilakukan.',
+        fallbackLabel: 'seg-edge-original.jpg',
+      },
+      sobel: {
+        src: 'assets/images/seg-edge-sobel.jpg',
+        alt: 'Hasil Sobel edge detection',
+        caption: 'Sobel menghitung gradien intensitas untuk menampilkan area perubahan yang cukup tajam pada gambar.',
+        fallbackLabel: 'seg-edge-sobel.jpg',
+      },
+      canny: {
+        src: 'assets/images/seg-edge-canny.jpg',
+        alt: 'Hasil Canny edge detection',
+        caption: 'Canny memakai beberapa tahap tambahan supaya hasil tepinya lebih rapi dan lebih selektif dibanding Sobel.',
+        fallbackLabel: 'seg-edge-canny.jpg',
       },
     },
   });

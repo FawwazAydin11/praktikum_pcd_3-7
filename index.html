@@ -580,8 +580,8 @@
             <div class="formula-item"><div class="formula-item__math">\[
             g(x,y)=
             \begin{cases}
-            1, & f(x,y)\ge T\\
-            0, & f(x,y)<T
+            1, &amp; f(x,y)\ge T\\
+            0, &amp; f(x,y)\lt T
             \end{cases}
             \]</div><p>Rumus thresholding biner.</p></div>
             <div class="formula-item"><div class="formula-item__math">\[
@@ -625,9 +625,42 @@
           </article>
         </div>
         <aside class="content-side">
+          <article class="demo-card">
+            <div class="demo-card__header">
+              <h3>Demo Thresholding</h3>
+              <p>Bandingkan hasil thresholding dari beberapa pendekatan.</p>
+            </div>
+            <div class="demo-controls demo-controls--wrap">
+              <button class="demo-btn is-active" data-seg-threshold="original">Original</button>
+              <button class="demo-btn" data-seg-threshold="global">Global</button>
+              <button class="demo-btn" data-seg-threshold="adaptive">Adaptive</button>
+              <button class="demo-btn" data-seg-threshold="otsu">Otsu</button>
+            </div>
+            <div class="demo-preview demo-preview--image">
+              <img id="demo-seg-threshold-image" src="assets/images/seg-threshold-original.jpg" alt="Demo thresholding" />
+            </div>
+            <div class="demo-caption" id="demo-seg-threshold-caption">Gambar awal dipakai sebagai pembanding sebelum thresholding dilakukan.</div>
+          </article>
+
+          <article class="demo-card">
+            <div class="demo-card__header">
+              <h3>Demo Segmentasi Berbasis Tepi</h3>
+              <p>Lihat perbedaan hasil Sobel dan Canny.</p>
+            </div>
+            <div class="demo-controls demo-controls--wrap">
+              <button class="demo-btn is-active" data-seg-edge="original">Original</button>
+              <button class="demo-btn" data-seg-edge="sobel">Sobel</button>
+              <button class="demo-btn" data-seg-edge="canny">Canny</button>
+            </div>
+            <div class="demo-preview demo-preview--image">
+              <img id="demo-seg-edge-image" src="assets/images/seg-edge-original.jpg" alt="Demo segmentasi tepi" />
+            </div>
+            <div class="demo-caption" id="demo-seg-edge-caption">Gambar awal dipakai sebagai pembanding sebelum deteksi tepi dilakukan.</div>
+          </article>
+
           <article class="summary-box">
-            <h3>Demo Visual</h3>
-            <p>Bagian segmentasi nanti bisa dilanjutkan lagi setelah CSS dan JS diselaraskan. Untuk tahap HTML ini, struktur materinya dulu yang dirapikan.</p>
+            <h3>Visual Segmentasi Lanjutan</h3>
+            <p>Region growing, DBSCAN, dan U-Net lebih enak ditampilkan sebagai visual contoh hasil. Bagian ini tidak perlu dibuat terlalu interaktif supaya fokus materinya tetap terjaga.</p>
           </article>
         </aside>
       </div>

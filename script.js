@@ -123,13 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
       resize: {
         src: 'assets/images/transform-resize.jpg',
         alt: 'Hasil resize pada citra',
-        caption: 'Resize mengubah ukuran gambar. Isinya tetap sama, cuma tampilannya jadi lebih kecil atau lebih besar.',
+        caption: 'Resize mengubah ukuran gambar. Isi gambarnya tetap sama, tetapi tampilannya menjadi lebih kecil atau lebih besar.',
         fallbackLabel: 'transform-resize.jpg',
       },
       rotate: {
         src: 'assets/images/transform-rotate.jpg',
         alt: 'Hasil rotasi pada citra',
-        caption: 'Rotate memutar gambar. Contoh yang dipakai di sini adalah rotasi 90 derajat.',
+        caption: 'Rotate memutar gambar. Pada contoh praktikum, gambar diputar 90 derajat sehingga orientasinya berubah jelas.',
         fallbackLabel: 'transform-rotate.jpg',
       },
       flip: {
@@ -203,66 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alt: 'Citra setelah diproses median filter',
         caption: 'Setelah median filter diterapkan, gangguan noise berkurang dan bentuk utama gambar bisa terlihat lebih bersih.',
         fallbackLabel: 'restoration-restored.jpg',
-      },
-    },
-  });
-
-  setupSingleImageDemo({
-    buttonSelector: '[data-seg-threshold]',
-    imageSelector: '#demo-seg-threshold-image',
-    captionSelector: '#demo-seg-threshold-caption',
-    dataAttribute: 'segThreshold',
-    config: {
-      original: {
-        src: 'assets/images/seg-threshold-original.jpg',
-        alt: 'Citra asli untuk demo thresholding',
-        caption: 'Gambar awal dipakai sebagai pembanding sebelum thresholding dilakukan.',
-        fallbackLabel: 'seg-threshold-original.jpg',
-      },
-      global: {
-        src: 'assets/images/seg-threshold-global.jpg',
-        alt: 'Hasil global thresholding',
-        caption: 'Global thresholding memakai satu threshold untuk seluruh gambar. Cocok kalau perbedaan foreground dan background cukup jelas.',
-        fallbackLabel: 'seg-threshold-global.jpg',
-      },
-      adaptive: {
-        src: 'assets/images/seg-threshold-adaptive.jpg',
-        alt: 'Hasil adaptive thresholding',
-        caption: 'Adaptive thresholding menghitung threshold per area kecil, jadi lebih fleksibel untuk pencahayaan yang tidak merata.',
-        fallbackLabel: 'seg-threshold-adaptive.jpg',
-      },
-      otsu: {
-        src: 'assets/images/seg-threshold-otsu.jpg',
-        alt: 'Hasil Otsu thresholding',
-        caption: 'Otsu thresholding mencari threshold optimal secara otomatis untuk memisahkan foreground dan background.',
-        fallbackLabel: 'seg-threshold-otsu.jpg',
-      },
-    },
-  });
-
-  setupSingleImageDemo({
-    buttonSelector: '[data-seg-edge]',
-    imageSelector: '#demo-seg-edge-image',
-    captionSelector: '#demo-seg-edge-caption',
-    dataAttribute: 'segEdge',
-    config: {
-      original: {
-        src: 'assets/images/seg-edge-original.jpg',
-        alt: 'Citra asli untuk demo segmentasi tepi',
-        caption: 'Gambar awal dipakai sebagai pembanding sebelum deteksi tepi dilakukan.',
-        fallbackLabel: 'seg-edge-original.jpg',
-      },
-      sobel: {
-        src: 'assets/images/seg-edge-sobel.jpg',
-        alt: 'Hasil Sobel edge detection',
-        caption: 'Sobel menghitung gradien intensitas untuk menampilkan area perubahan yang cukup tajam pada gambar.',
-        fallbackLabel: 'seg-edge-sobel.jpg',
-      },
-      canny: {
-        src: 'assets/images/seg-edge-canny.jpg',
-        alt: 'Hasil Canny edge detection',
-        caption: 'Canny memakai beberapa tahap tambahan supaya hasil tepinya lebih rapi dan lebih selektif dibanding Sobel.',
-        fallbackLabel: 'seg-edge-canny.jpg',
       },
     },
   });
